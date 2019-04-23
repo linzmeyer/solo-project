@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom'
 import {connect} from 'react-redux';
-import LoginPage from '../Login/Login';
+import LoginPage from '../LoginView/LoginView';
 import RegisterView from '../RegisterView/RegisterView';
 
 // A Custom Wrapper Component -- This will keep our code DRY.

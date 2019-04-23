@@ -1,4 +1,4 @@
-import React, {Component} from '../../../../node_modules/react';
+import React, {Component} from 'react';
 
 class Clue5View extends Component {
   render() {

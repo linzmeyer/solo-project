@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Login extends Component {
+class LoginView extends Component {
   state = {
     username: '',
     password: '',
@@ -43,26 +43,22 @@ class Login extends Component {
         <form onSubmit={this.login}>
           <h1>Login</h1>
           <div>
-            <label htmlFor="username">
-              Username:
-              <input
-                type="text"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChangeFor('username')}
-              />
-            </label>
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={this.handleInputChangeFor('username')}
+            />
           </div>
           <div>
-            <label htmlFor="password">
-              Password:
-              <input
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleInputChangeFor('password')}
-              />
-            </label>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleInputChangeFor('password')}
+            />
           </div>
           <div>
             <input
@@ -73,15 +69,13 @@ class Login extends Component {
             />
           </div>
         </form>
-        <center>
+        <div>
           <button
             type="button"
             className="link-button"
             onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}
-          >
-            Register
-          </button>
-        </center>
+          >Register</button>
+        </div>
       </div>
     );
   }
@@ -94,4 +88,4 @@ const mapStateToProps = state => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(LoginView);

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
+// import LogOutButton from '../LogOutButton/LogOutButton';
+import { Link } from 'react-router-dom';
+
 
 class HomeView extends Component {
 
@@ -13,10 +15,22 @@ class HomeView extends Component {
         </h1>
         <p>Your ID is: {this.props.user.id}</p>
         <p>Your login mode is: {this.props.loginMode}</p>
-        <button>Clues</button>
-        <button>Trail Map</button>
-        <button>About</button>
-        <LogOutButton className="log-in" />
+        <img src="./bridge.jpg" alt="Bridge in nature preserve" />
+        <div>
+          <button>Clues</button>
+        </div>
+        <div>
+          <button>Trail Map</button>
+        </div>
+        <div>
+          <button>About</button>
+        </div>
+        <div>
+          <Link
+          to="/"
+          onClick={() => this.props.dispatch({ type: 'LOGOUT' })}
+          >Sign Out</Link>
+        </div>
       </div>
     );
   }
