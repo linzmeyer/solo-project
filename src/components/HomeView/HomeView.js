@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import LogOutButton from '../LogOutButton/LogOutButton';
 import { Link } from 'react-router-dom';
+import Header from '../Header/Header';
 
 
 class HomeView extends Component {
@@ -10,6 +11,7 @@ class HomeView extends Component {
     console.log(this.props);
     return (
       <div>
+        <Header header="HOME" />
         <h1 id="welcome">
           Welcome, { this.props.user.username }!
         </h1>
