@@ -23,7 +23,7 @@ class HomeView extends Component {
           <Link to='/trail-map'><button>Trail Map</button></Link>
         </div>
         <div>
-          <button>About</button>
+          <Link to='/about'><button>About</button></Link>
         </div>
         <div>
           <Link

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom'
 import {connect} from 'react-redux';
-import LoginPage from '../LoginView/LoginView';
+import LoginView from '../LoginView/LoginView';
 import RegisterView from '../RegisterView/RegisterView';
 
 // A Custom Wrapper Component -- This will keep our code DRY.
@@ -33,8 +33,8 @@ const ProtectedRoute = (props) => {
     ComponentToShow = ComponentToProtect;
   } else if (loginMode === 'login') {
     // if they are not logged in, check the loginMode on Redux State
-    // if the mode is 'login', show the LoginPage
-    ComponentToShow = LoginPage;
+    // if the mode is 'login', show the LoginView
+    ComponentToShow = LoginView;
   } else {
     // the the user is not logged in and the mode is not 'login'
     // show the RegisterView
@@ -43,25 +43,16 @@ const ProtectedRoute = (props) => {
 
   // We return a Route component that gets added to our list of routes
   return (
-      <Route
-        // all props like 'exact' and 'path' that were passed in
-        // are now passed along to the 'Route' Component
-        {...otherProps}
-        component={ComponentToShow}
-      />
+    <Route
+      // all props like 'exact' and 'path' that were passed in
+      // are now passed along to the 'Route' Component
+      {...otherProps}
+      component={ComponentToShow}
+    />
   )
 }
 
-// Instead of taking everything from state, we just want the user and loginMode
-// to determine which page we should show the user
-// if you wanted you could write this code like this:
-// const mapStateToProps = ({ user, loginMode }) => ({ user, loginMode });
-const mapStateToProps = (state) => {
-  return {
-    user: state.user,
-    loginMode: state.loginMode,
-  }
-}
+const mapStateToProps = ({ user, loginMode }) => ({ user, loginMode });
 
 export default connect(mapStateToProps)(ProtectedRoute)
 

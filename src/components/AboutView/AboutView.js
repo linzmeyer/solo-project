@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header';
 import './AboutView.css';
+import Nav from '../Nav/Nav';
 
 
 class AboutView extends Component {
@@ -8,6 +9,7 @@ class AboutView extends Component {
     return (
       <div className="AboutView-wrapper">
         <Header header="About" />
+        <Nav />
         <div className="card" >
           <h2>Your Mission</h2>
           <p>Incididunt fugiat ad est qui aliqua non eu qui et ut et laboris. Ullamco sit exercitation cupidatat enim commodo. Adipisicing eiusmod laboris dolor proident labore sint proident duis sint ad aliquip amet.</p>

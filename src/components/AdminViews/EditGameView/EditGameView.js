@@ -35,21 +35,45 @@ class EditGameView extends Component {
           <div>
             <h3>Clue 2</h3>
             <textarea rows="5" cols="30" placeholder="Enter a descriptive clue. Prompt player to answer." ></textarea>
+            <br></br>
+            <label>Answer: </label>
+            <input></input>
+            <br></br>
+            <label>Location: </label>
+            <input type="text" onSubmit={ this.submit } ></input>
           </div>
 
           <div>
             <h3>Clue 3</h3>
             <textarea rows="5" cols="30" placeholder="Enter a descriptive clue. Prompt player to answer." ></textarea>
+            <br></br>
+            <label>Answer: </label>
+            <input></input>
+            <br></br>
+            <label>Location: </label>
+            <input type="text" onSubmit={ this.submit } ></input>
           </div>
 
           <div>
             <h3>Clue 4</h3>
             <textarea rows="5" cols="30" placeholder="Enter a descriptive clue. Prompt player to answer." ></textarea>
+            <br></br>
+            <label>Answer: </label>
+            <input></input>
+            <br></br>
+            <label>Location: </label>
+            <input type="text" onSubmit={ this.submit } ></input>
           </div>
 
           <div>
             <h3>Clue 5</h3>
             <textarea rows="5" cols="30" placeholder="Enter a descriptive clue. Prompt player to answer." ></textarea>
+            <br></br>
+            <label>Answer: </label>
+            <input></input>
+            <br></br>
+            <label>Location: </label>
+            <input type="text" onSubmit={ this.submit } ></input>
           </div>
 
           <div>

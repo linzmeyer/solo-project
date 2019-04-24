@@ -1,5 +1,6 @@
 const loginMode = (state = 'login', action) => {
-    switch (action.type) {
+  console.log('in loginMode reducer') 
+  switch (action.type) {
       case 'SET_TO_LOGIN_MODE':
         return 'login';
       case 'SET_TO_REGISTER_MODE':

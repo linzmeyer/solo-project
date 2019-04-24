@@ -7,7 +7,7 @@ import './Nav.css';
 const Nav = (props) => (
   <div className="Nav-wrapper">
     <Link to="/home">
-      <h2 className="nav-title">Prime Solo Project</h2>
+      <h2 className="nav-title">Oakdale Discovery</h2>
     </Link>
     <div className="nav-right">
       <Link className="nav-link" to="/home">
@@ -37,9 +37,6 @@ const Nav = (props) => (
 // object to determine if they are logged in
 // if they are logged in, we show them a few more links 
 // if you wanted you could write this code like this:
-// const mapStateToProps = ({ user }) => ({ user });
-const mapStateToProps = state => ({
-  user: state.user,
-});
+const mapStateToProps = ({ user }) => ({ user });
 
 export default connect(mapStateToProps)(Nav);
