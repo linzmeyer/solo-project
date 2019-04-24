@@ -6,6 +6,11 @@ import Header from '../../Header/Header';
 
 class GameDetailsView extends Component {
 
+  componentDidMount() {
+    let action = { type: 'GET_ALL_CLUES' };
+    this.props.dispatch( action );
+  }
+
   renderClueList = () => {
     return (
       <div>
@@ -19,6 +24,7 @@ class GameDetailsView extends Component {
   }
 
   render() {
+    console.log((this.props.allClues));
     return (
       <div>
         <Header header="Game Details" />
@@ -39,6 +45,6 @@ class GameDetailsView extends Component {
   }
 }
 
-const mapStateToProps = ({ clueList, solution }) => ({ clueList, solution });
+const mapStateToProps = ({ allClues, solution }) => ({ allClues, solution });
 
 export default connect( mapStateToProps )( GameDetailsView );
