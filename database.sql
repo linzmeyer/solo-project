@@ -29,6 +29,21 @@ CREATE TABLE "clues" (
     "location" VARCHAR (1000)
 );
 
+-- Test data for clues table
+INSERT INTO "clues" ("clue_number", "description", "answer", "location")
+VALUES ('1', 'description of clue 1', 'flower', 'North end of bridge');
+
+INSERT INTO "clues" ("clue_number", "description", "answer", "location")
+VALUES ('2', 'description of clue 2', 'red squirrel', 'Under benches');
+
+INSERT INTO "clues" ("clue_number", "description", "answer", "location")
+VALUES ('3', 'description of clue 3', 'red winged black bird', 'back of oak tree');
+
+INSERT INTO "clues" ("clue_number", "description", "answer", "location")
+VALUES ('4', 'description of clue 4', 'turtle', 'in firepit');
+
+INSERT INTO "clues" ("clue_number", "description", "answer", "location")
+VALUES ('5', 'description of clue 5', 'quaking aspen', 'under the lake');
 
 
 
