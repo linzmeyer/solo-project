@@ -8,7 +8,7 @@ class AdminHomeView extends Component {
   render() {
     return (
       <div>
-        <Header header="EDIT GAME" />
+        <Header header="ADMIN HOME" />
         <h1 id="welcome">
           Welcome, { this.props.user.username }!
         </h1>
@@ -42,4 +42,4 @@ class AdminHomeView extends Component {
 
 const mapStateToProps = ({ user, loginMode }) => ({ user, loginMode });
 
-export default connect(mapStateToProps)(AdminHomeView);
+export default connect( mapStateToProps )( AdminHomeView );

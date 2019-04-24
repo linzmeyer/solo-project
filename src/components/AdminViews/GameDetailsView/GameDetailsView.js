@@ -1,27 +1,39 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+
+import ClueListItem from '../../ClueListItem/ClueListItem';
+import Header from '../../Header/Header';
 
 class GameDetailsView extends Component {
 
   renderClueList = () => {
     return (
-      { 
-        this.props.reduxState.clueList.map( clue =>
-          <ClueListItem key={ clue.id } clue={ clue } />
-        )
-      }
+      <div>
+        { 
+          this.props.reduxState.clueList.map( clue =>
+            <ClueListItem key={ clue.id } clue={ clue } />
+          )
+        }
+      </div>
     );
   }
 
   render() {
     return (
       <div>
-        <div>f
-          <label>What people will discover:</label>
-          <p>Lorem Ipsum</p>
+        <Header header="Game Details" />
+        <div>
+          <h3>What people will discover:</h3>
+          {/* <p>final solution reducer</p> */}
         </div>
         <div>
-          {this.renderClueList}
+          {/* {this.renderClueList()} */}
         </div>
+        <div>
+          <h3>Reward:</h3>
+          {/* reward reducer */}
+        </div>
+
       </div>
     );
   }
@@ -29,4 +41,4 @@ class GameDetailsView extends Component {
 
 const mapStateToProps = ({ clueList, solution }) => ({ clueList, solution });
 
-export default GameDetailsView;
+export default connect( mapStateToProps )( GameDetailsView );
