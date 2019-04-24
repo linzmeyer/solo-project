@@ -1,0 +1,22 @@
+.paragraph {
+  grid-area: paragraph;
+}
+
+.in {
+  grid-area: in;
+}
+
+.btn {
+  grid-area: btn;
+  justify-content: center;
+}
+
+.clue-body {
+  display: grid;
+  grid-row-gap: 1em;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+  'paragraph paragraph  paragraph paragraph paragraph widget'
+  '. . in in . .'
+  '. . btn btn . .';
+}

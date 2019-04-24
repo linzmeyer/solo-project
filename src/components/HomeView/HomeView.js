@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import LogOutButton from '../LogOutButton/LogOutButton';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
-
 
 class HomeView extends Component {
 
@@ -19,18 +17,18 @@ class HomeView extends Component {
         <p>Your login mode is: {this.props.loginMode}</p>
         <img src="./bridge.jpg" alt="Bridge in nature preserve" />
         <div>
-          <button>Clues</button>
+          <Link to='/clues/1'><button>Play</button></Link>
         </div>
         <div>
-          <button>Trail Map</button>
+          <Link to='/trail-map'><button>Trail Map</button></Link>
         </div>
         <div>
           <button>About</button>
         </div>
         <div>
           <Link
-          to="/"
-          onClick={() => this.props.dispatch({ type: 'LOGOUT' })}
+            to="/"
+            onClick={() => this.props.dispatch({ type: 'LOGOUT' })}
           >Sign Out</Link>
         </div>
       </div>
@@ -44,5 +42,4 @@ const mapStateToProps = ({ user, loginMode }) => ({ user, loginMode });
 // const mapStateToProps = reduxState => ({ user: reduxState.user, loginMode: reduxState.loginMode });
 // const mapStateToProps = reduxState => ({ reduxState });
 
-// this allows us to use <App /> in index.js
 export default connect(mapStateToProps)(HomeView);

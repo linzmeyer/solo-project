@@ -1,7 +1,30 @@
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --oakdaleGreen: #6D863F;
+    --oakdaleBlue: #47728B;
+  }
+
+.App-wrapper {
+    background-color: var(--oakdaleGreen);
+    margin: 30px 50px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    display: grid;
+    grid-area: 'App';
+}
+
 body {
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
-    background: url('../../images/wetland.jpeg');    
+    background: url('../../images/wetland.jpeg');
+    grid-template-areas:
+    '. App .'
 }
 
 .alert {

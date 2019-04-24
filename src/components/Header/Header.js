@@ -6,7 +6,7 @@ import './Header.css';
 class Header extends Component {
   render() {
     return (
-      <h1 className="Header-wrapper ">{this.props.header}</h1>
+      <h1 className="Header-wrapper">{this.props.header}</h1>
     );
   }
 }

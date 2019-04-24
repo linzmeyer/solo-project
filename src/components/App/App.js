@@ -8,7 +8,6 @@ import {
 import {connect} from 'react-redux';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
-import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import AboutView from '../AboutView/AboutView';
 import HomeView from '../HomeView/HomeView';
@@ -35,8 +34,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Nav />
+        <div className="App-wrapper" >
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
@@ -51,8 +49,7 @@ class App extends Component {
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
             <ProtectedRoute exact path="/info" component={InfoView} />
-            {/* If none of the other routes matched, we will show a 404. */}
-            <Route render={() => <h1>404</h1>} />
+            
 
             {/*** Routes that I added ****************************************/}
 
@@ -70,8 +67,10 @@ class App extends Component {
             <ProtectedRoute exact path="/clues/5" component={Clue5View} />
 
             {/* Shared Routes */}
-            <ProtectedRoute exact path="/trail-map" component={TrailMapView} />
-             
+            <Route exact path="/trail-map" component={TrailMapView} />
+            {/* If none of the other routes matched, we will show a 404. */}
+            <Route render={() => <h1>404</h1>} />
+            
           </Switch>
           <Footer />
         </div>

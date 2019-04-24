@@ -1,0 +1,18 @@
+.CluesWidget-wrapper {
+  display: grid;
+  align-items: center;
+  grid-area: widget;
+}
+
+.CluesWidget-wrapper > * {
+  text-decoration: none;
+  color: black;
+  font-size: 200%;
+  margin: 10px;
+}
+
+.CluesWidget-wrapper a:hover {
+  background-color: #47728B;
+  color: white;
+  border-radius: 10px
+}
