@@ -3,6 +3,7 @@ import loginSaga from './loginSaga';
 import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
 import getAllCluesSaga from './getAllCluesSaga';
+import updateGame from './updateGameSaga';
 
 // some sagas trigger other sagas, as an example
 // the registration triggers a login
@@ -12,6 +13,7 @@ export default function* rootSaga() {
     getAllCluesSaga(),
     loginSaga(),
     registrationSaga(),
+    updateGame(),
     userSaga(),
   ]);
 }

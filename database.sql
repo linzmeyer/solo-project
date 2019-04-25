@@ -45,6 +45,13 @@ VALUES ('4', 'description of clue 4', 'turtle', 'in firepit');
 INSERT INTO "clues" ("clue_number", "description", "answer", "location")
 VALUES ('5', 'description of clue 5', 'quaking aspen', 'under the lake');
 
+-- Init POST to solutions table
+INSERT INTO "solutions" ("solution", "reward")
+VALUES ('init solution', 'init reward');
+
+-- Update the solution table with a new solution and reward
+UPDATE "solutions" SET "solution" = 'chase', "reward" = 'treats';
+
 
 
 

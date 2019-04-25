@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import ClueListItem from '../../ClueListItem/ClueListItem';
 import Header from '../../Header/Header';
+import Nav from '../../Nav/Nav';
 
 class GameDetailsView extends Component {
 
@@ -15,8 +16,8 @@ class GameDetailsView extends Component {
     return (
       <div>
         { 
-          this.props.reduxState.clueList.map( clue =>
-            <ClueListItem key={ clue.id } clue={ clue } />
+          this.props.allClues.map( clue =>
+            <ClueListItem key={ clue.clue_number } clue={ clue } />
           )
         }
       </div>
@@ -28,12 +29,13 @@ class GameDetailsView extends Component {
     return (
       <div>
         <Header header="Game Details" />
+        <Nav />
         <div>
           <h3>What people will discover:</h3>
           {/* <p>final solution reducer</p> */}
         </div>
         <div>
-          {/* {this.renderClueList()} */}
+          {this.renderClueList()}
         </div>
         <div>
           <h3>Reward:</h3>
