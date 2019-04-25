@@ -2,28 +2,6 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
-// // update the solution
-// router.put('/solutions', (req, res) => {
-//   console.log('req.body:', req.body);
-//   console.log('req.body.solution:', req.body.solution);
-//   console.log('req.body.reward:', req.body.reward);
-
-//   let solution = req.body.solution;
-//   let reward = req.body.reward;
-
-//   // console.log(req.body);
-//   let sqlText = `UPDATE "solutions" SET "solution" = $1, "reward" = $2;`;
-
-//   pool.query(sqlText, [solution, reward])
-//     .then((result) => {
-//       res.sendStatus(200);
-//     })
-//     .catch((error) => {
-//       console.log(`Error making database query ${sqlText}`, error);
-//       res.sendStatus(500);
-//     })
-// })
-
 // update the solution
 router.put('/', async (req, res) => {
 
@@ -114,7 +92,7 @@ router.put('/', async (req, res) => {
     await client.query( sqlClue4Text, [ clue4Description, clue4Answer, clue4Location ]);
     // update clue 5 row in clues table
     await client.query( sqlClue5Text, [ clue5Description, clue5Answer, clue5Location ]);
-    
+
     await client.query('COMMIT')
     res.sendStatus(200);
   } catch (e) {
@@ -124,51 +102,6 @@ router.put('/', async (req, res) => {
   } finally {
     client.release()
   }
-
-  // console.log('in change clues route');
-  // console.log('req.body:', req.body);
-
-  // let clue1Description = req.body.clue1Hint;
-  // let clue2Description = req.body.clue2Hint;
-  // let clue3Description = req.body.clue3Hint;
-  // let clue4Description = req.body.clue4Hint;
-  // let clue5Description = req.body.clue5Hint;
-
-  // let clue1Answer = req.body.clue1Answer;
-  // let clue2Answer = req.body.clue2Answer;
-  // let clue3Answer = req.body.clue3Answer;
-  // let clue4Answer = req.body.clue4Answer;
-  // let clue5Answer = req.body.clue5Answer;
-
-  // let clue1Location = req.body.clue1Location;
-  // let clue2Location = req.body.clue2Location;
-  // let clue3Location = req.body.clue3Location;
-  // let clue4Location = req.body.clue4Location;
-  // let clue5Location = req.body.clue5Location;
-
-  // let sqlText = `
-  //   UPDATE "clues" SET
-  //   "description" = $1 WHERE "clue_number" = '1',
-  //   "description" = $2 WHERE "clue_number" = '2',
-  //   "description" = $3 WHERE "clue_number" = '3',
-  //   "description" = $4 WHERE "clue_number" = '4',
-  //   "description" = $5 WHERE "clue_number" = '5';
-  // `;
-
-  // pool.query(sqlText, [
-  //   clue1Description,
-  //   clue2Description,
-  //   clue3Description,
-  //   clue4Description,
-  //   clue5Description
-  // ]).then((result) => {
-
-  //     res.sendStatus(200);
-  //   })
-  //   .catch((error) => {
-  //     console.log(`Error making database query ${sqlText}`, error);
-  //     res.sendStatus(500);
-  //   })
-})
+});
 
 module.exports = router;
