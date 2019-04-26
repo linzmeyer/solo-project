@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Nav from '../../Nav/Nav';
 import Header from '../../Header/Header';
 import { connect } from 'react-redux';

@@ -18,7 +18,7 @@
 }
 
 body {
-    display: grid;
+    /* display: grid; */
     grid-template-columns: repeat( 3, 1fr);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
