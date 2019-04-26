@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
@@ -20,7 +21,7 @@ class AboutView extends Component {
         <Header header="ABOUT" />
         <Navbar currentView="ABOUT" />
         <div className="mission" >
-          <h2>Your Mission</h2>
+          <h2><FontAwesomeIcon icon="compass" spin /> Your Mission <FontAwesomeIcon icon="compass" spin /></h2>
           <p>
             Find clues throughout the park. They are trivial facts about the oakdale nature preserve. They touch on the environment and ecology of this park. There is so much to learn about our often over-looked world.
           </p>
@@ -29,13 +30,17 @@ class AboutView extends Component {
           </p>
         </div>
         <div className="reward" >
-          <h2>Your Reward</h2>
+          <h2>
+            <FontAwesomeIcon icon="trophy" /> Your Reward <FontAwesomeIcon icon="trophy" />
+          </h2>
           <p>
             { this.props.activeReward }
           </p>
         </div>
         <div className="grid" >
-          <h2 className="grid-title" >Tech Used To Create This App</h2>
+          <h2 className="grid-title" >
+            <FontAwesomeIcon icon="microchip" /> Tech Used To Create This App <FontAwesomeIcon icon="microchip" />
+          </h2>
           <ul className="grid-list" >
             <li>React / JSX</li>
             <li>React-Redux</li>
@@ -48,7 +53,9 @@ class AboutView extends Component {
           </ul>
         </div>
         <div className="grid" >
-          <h2 className="grid-title" >THANKS FOR THE SUPPORT!</h2>
+          <h2 className="grid-title" >
+            <FontAwesomeIcon icon="people-carry" /> THANKS FOR THE SUPPORT! <FontAwesomeIcon icon="people-carry" />
+          </h2>
           <ul className="grid-list" >
             <li>Family: Laura and Monty</li>
             <li>Cohorts: Atbash, Affine, Baconia, Zaurak</li>

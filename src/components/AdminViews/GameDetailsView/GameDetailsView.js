@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import ClueListItem from '../../ClueListItem/ClueListItem';
 import Header from '../../Header/Header';
-import Nav from '../../Nav/Nav';
+import Navbar from '../../Navbar/Navbar';
 
 class GameDetailsView extends Component {
 
@@ -28,8 +28,8 @@ class GameDetailsView extends Component {
     console.log((this.props.allClues));
     return (
       <div>
-        <Header header="Game Details" />
-        <Nav />
+        <Header header="GAME DETAILS" />
+        <Navbar currentView="GAME DETAILS" />
         <div>
           <h3>What people will discover:</h3>
           {/* <p>final solution reducer</p> */}

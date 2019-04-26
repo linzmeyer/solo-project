@@ -8,10 +8,7 @@ class TrailMapView extends Component {
       <div className="TrailMapView-wrapper">
         <Navbar currentView="TRAIL MAP" />
         <div className="img-window" >
-          <div className="trail-map" >
-        <img src="./trail-map.png" alt="..." ></img>
-            {/* TRAIL MAP SHOULD RENDER HERE */}
-          </div>
+          <img src="./trail-map.png" alt="trail map of Oakdale Nature Preserve" ></img>
         </div>
         <Navbar currentView="TRAIL MAP" />
       </div>

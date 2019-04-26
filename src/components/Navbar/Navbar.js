@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -28,7 +29,7 @@ class Navbar extends Component {
     if(
       this.props.currentView === 'EDIT GAME' ||
       this.props.currentView === 'GAME DETAILS'
-    ){ return <Link to="/admin/home" className="nav-item" >Home</Link>; }
+    ){ return <Link to="/admin/home" className="nav-item" ><FontAwesomeIcon icon="home" /> Home</Link>; }
   } 
 
   // render Home and Trail Map links based on current view

@@ -12,9 +12,6 @@ class AdminHomeView extends Component {
         <h1 id="welcome">
           Welcome, { this.props.user.username }!
         </h1>
-        <p>Your ID is: {this.props.user.id}</p>
-        <p>Your login mode is: {this.props.loginMode}</p>
-        <img src="./bridge.jpg" alt="Bridge in nature preserve" />
         <div>
           <Link to='/admin/game-details'><button>GAME DETAILS</button></Link>
         </div>
