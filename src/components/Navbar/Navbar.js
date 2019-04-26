@@ -17,6 +17,12 @@ class Navbar extends Component {
     ){ return <Link to="/about" className="nav-item" >About</Link>; }
   }
 
+  renderTrailMap = () => {
+    if(
+      this.props.currentView !== 'TRAIL MAP'
+    ){ return <Link to="/trail-map" className="nav-item" >Trail Map</Link>; }
+  }
+
   // render Admin Home link based on current view
   renderAdminHomeLink = () => {
     if(
@@ -29,6 +35,7 @@ class Navbar extends Component {
   renderHomeLink = () => {
     if(
       this.props.currentView === 'ABOUT' ||
+      this.props.currentView === 'TRAIL MAP' ||
       this.props.currentView === 'CLUE 1' ||
       this.props.currentView === 'CLUE 2' ||
       this.props.currentView === 'CLUE 3' ||
@@ -44,6 +51,8 @@ class Navbar extends Component {
     ){ return <Link to="/about" className="nav-item" >Home</Link>; }
   }
 
+
+
   render() {
     return (
       <div className="Navbar-wrapper" >
@@ -51,8 +60,7 @@ class Navbar extends Component {
         { this.renderAdminHomeLink() }
         { this.renderLogOutLink() }
         { this.renderAboutLink() }
-        <Link to="/trail-map" className="nav-item" >Trail Map</Link>
-        
+        { this.renderTrailMap() }
       </div>
     );
   }

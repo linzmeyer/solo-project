@@ -1,4 +1,8 @@
 .trail-map {
+}
+
+.img-window {
   height: 800px;
-  background-image: url('../../images/trail-map.png');
+  width: 750px;
+  overflow: scroll;
 }
