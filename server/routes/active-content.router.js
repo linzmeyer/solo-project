@@ -3,8 +3,8 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 // // GET all active content from the database
-// router.get('/', (req, res) => {
-//   const queryText = `SELECT "clue_number", "description", "answer", "location" FROM "clues";`;
+// router.get('/all-rewards', (req, res) => {
+//   const queryText = `SELECT "reward" FROM "solutions";`;
 //   pool.query(queryText)
 //     .then((result) => { res.send(result.rows); })
 //     .catch((err) => {

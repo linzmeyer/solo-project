@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../Header/Header';
+import Navbar from '../Navbar/Navbar';
 import './AboutView.css';
-import Nav from '../Nav/Nav';
 
 
 class AboutView extends Component {
@@ -17,19 +17,43 @@ class AboutView extends Component {
   render() {
     return (
       <div className="AboutView-wrapper">
-        <Header header="About" />
-        <Nav />
-        <div className="card" >
+        <Header header="ABOUT" />
+        <Navbar currentView="ABOUT" />
+        <div className="mission" >
           <h2>Your Mission</h2>
-          <p>Incididunt fugiat ad est qui aliqua non eu qui et ut et laboris. Ullamco sit exercitation cupidatat enim commodo. Adipisicing eiusmod laboris dolor proident labore sint proident duis sint ad aliquip amet.</p>
+          <p>
+            Find clues throughout the park. They are trivial facts about the oakdale nature preserve. They touch on the environment and ecology of this park. There is so much to learn about our often over-looked world.
+          </p>
+          <p>
+            Each clue will prompt you to answer a question. The answer to the clue can be found by inspecting the different areas of the park. Pay attention to the hints. When the question is answered, you will unlock the next clue. Unlock and answer all of the clues in order to discover the final mystery solution. If you figure out the final solution, you will be rewarded! HAPPY HUNTING!
+          </p>
         </div>
-        <div className="card" >
+        <div className="reward" >
           <h2>Your Reward</h2>
-          { this.props.activeReward }
+          <p>
+            { this.props.activeReward }
+          </p>
         </div>
-        <div className="card" >
-          <h2>About This App</h2>
-          <p>Anim nulla cillum id proident proident sint voluptate do nisi in culpa et do ad. Amet voluptate nisi deserunt proident pariatur. In mollit magna qui fugiat eu. Sit fugiat labore aliqua irure tempor. Excepteur sunt enim nisi adipisicing. Esse minim laborum deserunt nostrud excepteur ipsum reprehenderit officia laboris laboris deserunt.</p>
+        <div className="grid" >
+          <h2 className="grid-title" >Tech Used To Create This App</h2>
+          <ul className="grid-list" >
+            <li>React / JSX</li>
+            <li>React-Redux</li>
+            <li>Redux-Saga</li>
+            <li>Node | npm</li>
+            <li>AJAX</li>
+            <li>Postgresql</li>
+            <li>CSS | CSS Grids</li>
+            <li>Font Awesome</li>
+          </ul>
+        </div>
+        <div className="grid" >
+          <h2 className="grid-title" >THANKS FOR THE SUPPORT!</h2>
+          <ul className="grid-list" >
+            <li>Family: Laura and Monty</li>
+            <li>Cohorts: Atbash, Affine, Baconia, Zaurak</li>
+            <li>Prime Staff: I appreciate this awesome opportunity!</li>
+          </ul>
         </div>
       </div>
     );

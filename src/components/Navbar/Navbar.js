@@ -11,6 +11,12 @@ class Navbar extends Component {
   //   this.props.dispatch( action );
   // }
 
+  renderAboutLink = () => {
+    if(
+      this.props.currentView !== 'ABOUT'
+    ){ return <Link to="/about" className="nav-item" >About</Link>; }
+  }
+
   // render Admin Home link based on current view
   renderAdminHomeLink = () => {
     if(
@@ -28,25 +34,25 @@ class Navbar extends Component {
       this.props.currentView === 'CLUE 3' ||
       this.props.currentView === 'CLUE 4' ||
       this.props.currentView === 'CLUE 5'
-    ){
-      return ( <Link to="/home" className="nav-item" >Home</Link>); }
-  } 
+    ){ return ( <Link to="/home" className="nav-item" >Home</Link>); }
+  }
 
   // render Log Out link based on current view
   renderLogOutLink = () => {
     if(
       this.props.currentView === 'HOME'
     ){ return <Link to="/about" className="nav-item" >Home</Link>; }
-  } 
+  }
 
   render() {
     return (
       <div className="Navbar-wrapper" >
-          { this.renderHomeLink() }
-          { this.renderAdminHomeLink() }
-          { this.renderLogOutLink() }
-          <Link to="/trail-map" className="nav-item" >Trail Map</Link>
-          <Link to="/about" className="nav-item" >About</Link>
+        { this.renderHomeLink() }
+        { this.renderAdminHomeLink() }
+        { this.renderLogOutLink() }
+        { this.renderAboutLink() }
+        <Link to="/trail-map" className="nav-item" >Trail Map</Link>
+        
       </div>
     );
   }
