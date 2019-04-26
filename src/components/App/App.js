@@ -35,49 +35,51 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App-wrapper" >
-          <Switch>
-            {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-            <Redirect exact from="/" to="/home" />
+        <div className="App-body">
+          <div className="App-wrapper" >
+            <Switch>
+              {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
+              <Redirect exact from="/" to="/home" />
 
-            {/* Visiting localhost:3000/about will show the about page.
-            This is a route anyone can see, no login necessary */}
-            <Route exact path="/about" component={AboutView} />
+              {/* Visiting localhost:3000/about will show the about page.
+              This is a route anyone can see, no login necessary */}
+              <Route exact path="/about" component={AboutView} />
 
-            {/* For protected routes, the view could show one of several things on the same route.
-            Visiting localhost:3000/home will show the HomeView if the user is logged in.
-            If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
+              {/* For protected routes, the view could show one of several things on the same route.
+              Visiting localhost:3000/home will show the HomeView if the user is logged in.
+              If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
-            <ProtectedRoute exact path="/home" component={HomeView} />
+              <ProtectedRoute exact path="/home" component={HomeView} />
 
-            {/* This works the same as the other protected route, except that if the user is logged in,
-            they will see the info page instead. */}
-            <ProtectedRoute exact path="/info" component={InfoView} />
-            
+              {/* This works the same as the other protected route, except that if the user is logged in,
+              they will see the info page instead. */}
+              <ProtectedRoute exact path="/info" component={InfoView} />
+              
 
-            {/*** Routes that I added ****************************************/}
+              {/*** Routes that I added ****************************************/}
 
-            {/* Admin Routes */}
-            <ProtectedRoute exact path="/admin/home" component={AdminHomeView} />
-            <ProtectedRoute exact path="/admin/edit-game" component={EditGameView} />
-            <ProtectedRoute exact path="/admin/game-details" component={GameDetailsView} />
-            <ProtectedRoute exact path="/admin/manage-users" component={ManageUsersView} />
-            
-            {/* User Routes */}
-            <ProtectedRoute exact path="/clues/1" component={Clue1View} />
-            <ProtectedRoute exact path="/clues/2" component={Clue2View} />
-            <ProtectedRoute exact path="/clues/3" component={Clue3View} />
-            <ProtectedRoute exact path="/clues/4" component={Clue4View} />
-            <ProtectedRoute exact path="/clues/5" component={Clue5View} />
+              {/* Admin Routes */}
+              <ProtectedRoute exact path="/admin/home" component={AdminHomeView} />
+              <ProtectedRoute exact path="/admin/edit-game" component={EditGameView} />
+              <ProtectedRoute exact path="/admin/game-details" component={GameDetailsView} />
+              <ProtectedRoute exact path="/admin/manage-users" component={ManageUsersView} />
+              
+              {/* User Routes */}
+              <ProtectedRoute exact path="/clues/1" component={Clue1View} />
+              <ProtectedRoute exact path="/clues/2" component={Clue2View} />
+              <ProtectedRoute exact path="/clues/3" component={Clue3View} />
+              <ProtectedRoute exact path="/clues/4" component={Clue4View} />
+              <ProtectedRoute exact path="/clues/5" component={Clue5View} />
 
-            {/* Shared Routes */}
-            <Route exact path="/trail-map" component={TrailMapView} />
+              {/* Shared Routes */}
+              <Route exact path="/trail-map" component={TrailMapView} />
 
-            {/* If none of the other routes matched, we will show a 404. */}
-            <Route render={() => <h1>404</h1>} />
-            
-          </Switch>
-          <Footer />
+              {/* If none of the other routes matched, we will show a 404. */}
+              <Route render={() => <h1>404</h1>} />
+              
+            </Switch>
+            <Footer />
+          </div>
         </div>
       </Router>
   )}

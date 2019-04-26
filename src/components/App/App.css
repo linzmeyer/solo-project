@@ -17,14 +17,18 @@
     grid-area: App;
 }
 
+.App-body {
+  display: grid;
+  grid-template-columns: repeat( 7, 1fr);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.6rem;
+  margin: 0px;
+  grid-template-areas:
+  '. . App App App . .'
+}
+
 body {
-    /* display: grid; */
-    grid-template-columns: repeat( 3, 1fr);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0px;
-    background: url('../../images/wetland.jpeg');
-    grid-template-areas:
-    '. App .'
+  background: url('../../images/wetland.jpeg');
 }
 
 /* .alert {
