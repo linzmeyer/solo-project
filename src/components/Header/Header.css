@@ -1,3 +1,6 @@
 .Header-wrapper {
   font-family: 'Fugaz One', cursive;
+  text-transform: lowercase;
+  font-size: 4em;
+  margin: .5%;
 }

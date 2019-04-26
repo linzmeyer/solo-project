@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import './TrailMapView.css';
+import Navbar from '../Navbar/Navbar';
 
 class TrailMapView extends Component {
   render() {
     return (
       <div className="TrailMapView-wrapper">
-        <h1>Hello TrailMapView</h1>
-        <button>Back</button>
-        <button>Home</button>
+        <div className="trail-map" >
+        </div>
+        <Navbar />
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Nav from '../../Nav/Nav';
 import Header from '../../Header/Header';
+import Navbar from '../../Navbar/Navbar';
 import CluesWidget from '../../CluesWidget/CluesWidget';
 import '../ClueViews.css';
 import { connect } from 'react-redux';
@@ -13,11 +13,10 @@ class Clue1View extends Component {
   }
 
   render() {
-    console.log('this just happened!')
     return (
       <div>
         <Header header="CLUE 1" />
-        <Nav />
+        <Navbar currentView="CLUE 1" />
         <div className="clue-body" >
           <p className="paragraph">{this.props.allClues[0].description}</p>
           <CluesWidget />

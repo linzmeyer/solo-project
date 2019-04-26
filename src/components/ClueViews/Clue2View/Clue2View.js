@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Nav from '../../Nav/Nav';
+import Navbar from '../../Navbar/Navbar';
 import Header from '../../Header/Header';
 import CluesWidget from '../../CluesWidget/CluesWidget';
 import { connect } from 'react-redux';
@@ -15,7 +15,7 @@ class Clue2View extends Component {
     return (
       <div>
         <Header header="CLUE 2" />
-        <Nav />
+        <Navbar currentView="CLUE 2" />
         <div className="clue-body" >
           <p className="paragraph">{this.props.allClues[1].description}</p>
           <CluesWidget />

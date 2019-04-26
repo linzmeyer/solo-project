@@ -1,10 +1,19 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+
 import Header from '../Header/Header';
 import './AboutView.css';
 import Nav from '../Nav/Nav';
 
 
 class AboutView extends Component {
+
+  componentDidMount = () => {
+    // Get the reward
+    let action = { type: 'GET_ACTIVE_REWARD' }
+    this.props.dispatch( action );
+  }
+
   render() {
     return (
       <div className="AboutView-wrapper">
@@ -16,7 +25,7 @@ class AboutView extends Component {
         </div>
         <div className="card" >
           <h2>Your Reward</h2>
-          <p>Aliqua excepteur duis labore exercitation commodo voluptate ipsum excepteur elit qui sit. Laborum nisi ut nisi ullamco exercitation id laborum aute do consequat. Sunt minim reprehenderit sunt aute commodo aute. Officia sunt qui anim Lorem duis pariatur dolor minim mollit laboris consectetur consequat.</p>
+          { this.props.activeReward }
         </div>
         <div className="card" >
           <h2>About This App</h2>
@@ -27,5 +36,6 @@ class AboutView extends Component {
   }
 }
 
+const mapStateToProps = ({ activeReward }) => ({ activeReward });
 
-export default AboutView;
+export default connect( mapStateToProps )(AboutView);

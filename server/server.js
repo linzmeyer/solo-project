@@ -12,6 +12,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const cluesRouter = require('./routes/clues.router');
 const adminChangesRouter = require('./routes/admin-changes.router');
+const activeContentRouter = require('./routes/active-content.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -28,6 +29,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/clues', cluesRouter);
 app.use('/api/admin-changes', adminChangesRouter);
+app.use('/api/active-content', activeContentRouter);
 
 // Serve static files
 app.use(express.static('build'));
@@ -36,6 +38,4 @@ app.use(express.static('build'));
 const PORT = process.env.PORT || 5000;
 
 /** Listen * */
-app.listen(PORT, () => {
-  console.log(`Listening on port: ${PORT}`);
-});
+app.listen(PORT, () => { console.log(`Listening on port: ${PORT}`); });

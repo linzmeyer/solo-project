@@ -1,0 +1,17 @@
+.Navbar-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0.3rem;
+  background-color: #008183;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: darkblue
+}

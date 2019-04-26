@@ -19,12 +19,12 @@
 
 .App-body {
   display: grid;
-  grid-template-columns: repeat( 7, 1fr);
+  grid-template-columns: repeat( 9, 1fr);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.6rem;
   margin: 0px;
   grid-template-areas:
-  '. . App App App . .'
+  '. . App App App App App . .'
 }
 
 body {

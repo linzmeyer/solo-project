@@ -52,6 +52,8 @@ VALUES ('init solution', 'init reward');
 -- Update the solution table with a new solution and reward
 UPDATE "solutions" SET "solution" = 'chase', "reward" = 'treats';
 
+-- Select the active reward
+SELECT "reward" FROM "solutions" WHERE "active" = 'TRUE';
 
 
 
