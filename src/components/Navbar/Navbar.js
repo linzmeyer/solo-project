@@ -12,16 +12,27 @@ class Navbar extends Component {
   //   this.props.dispatch( action );
   // }
 
+  // render About link based on current view
   renderAboutLink = () => {
     if(
       this.props.currentView !== 'ABOUT'
-    ){ return <Link to="/about" className="nav-item" >About</Link>; }
+    ){ return <Link to="/about" className="nav-item" ><FontAwesomeIcon icon={["fab", "earlybirds"]} /> About</Link>; }
   }
 
-  renderTrailMap = () => {
+  // render Admin Edit Game link based on current view
+  renderAdminEditGame = () => {
     if(
-      this.props.currentView !== 'TRAIL MAP'
-    ){ return <Link to="/trail-map" className="nav-item" >Trail Map</Link>; }
+      this.props.currentView === 'GAME DETAILS' ||
+      this.props.currentView === 'TRAIL MAP'
+    ){ return <Link to="/admin/edit-game" className="nav-item" ><FontAwesomeIcon icon={["far", "edit"]} /> Edit Game</Link>; }
+  }
+
+  // render Admin Game Details link based on current view
+  renderAdminGameDetails = () => {
+    if(
+      this.props.currentView === 'EDIT GAME' ||
+      this.props.currentView === 'TRAIL MAP'
+    ){ return <Link to="/admin/game-details" className="nav-item" ><FontAwesomeIcon icon="coffee" /> Game Details</Link>; }
   }
 
   // render Admin Home link based on current view
@@ -30,9 +41,9 @@ class Navbar extends Component {
       this.props.currentView === 'EDIT GAME' ||
       this.props.currentView === 'GAME DETAILS'
     ){ return <Link to="/admin/home" className="nav-item" ><FontAwesomeIcon icon="home" /> Home</Link>; }
-  } 
-
-  // render Home and Trail Map links based on current view
+  }
+    
+  // render Home link based on current view
   renderHomeLink = () => {
     if(
       this.props.currentView === 'ABOUT' ||
@@ -44,24 +55,31 @@ class Navbar extends Component {
       this.props.currentView === 'CLUE 5'
     ){ return ( <Link to="/home" className="nav-item" >Home</Link>); }
   }
-
-  // render Log Out link based on current view
-  renderLogOutLink = () => {
+      
+  // // render Sign Out link based on current view
+  // renderLogOutLink = () => {
+  //   if(
+  //     this.props.currentView === 'HOME'
+  //   ){ return <Link to="/about" className="nav-item" >Home</Link>; }
+  // }
+    
+  // render Trail Map link based on current view
+  renderTrailMap = () => {
     if(
-      this.props.currentView === 'HOME'
-    ){ return <Link to="/about" className="nav-item" >Home</Link>; }
+      this.props.currentView !== 'TRAIL MAP'
+    ){ return <Link to="/trail-map" className="nav-item" ><FontAwesomeIcon icon="map-signs" /> Trail Map</Link>; }
   }
-
-
-
+    
   render() {
     return (
       <div className="Navbar-wrapper" >
         { this.renderHomeLink() }
         { this.renderAdminHomeLink() }
-        { this.renderLogOutLink() }
-        { this.renderAboutLink() }
+        {/* { this.renderLogOutLink() } */}
+        { this.renderAdminGameDetails() }
+        { this.renderAdminEditGame() }
         { this.renderTrailMap() }
+        { this.renderAboutLink() }
       </div>
     );
   }

@@ -17,12 +17,17 @@ import {
   faGlobe,
   faHome,
   faInfoCircle,
+  faMapSigns,
   faMicrochip,
   faPeopleCarry,
   faStroopwafel,
   faTrophy,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
+
+import { faEarlybirds } from '@fortawesome/free-brands-svg-icons';
+
+import { faEdit } from '@fortawesome/free-regular-svg-icons';
 
 // add individual icons to library
 icons.add(
@@ -35,9 +40,12 @@ icons.add(
   faCompass,
   faCopyright,
   faCircle,
+  faEarlybirds,
+  faEdit,
   faGlobe,
   faHome,
   faInfoCircle,
+  faMapSigns,
   faMicrochip,
   faPeopleCarry,
   faStroopwafel,

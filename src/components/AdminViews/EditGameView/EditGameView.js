@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Nav from '../../Nav/Nav';
 import Header from '../../Header/Header';
 import { connect } from 'react-redux';
+import Navbar from '../../Navbar/Navbar';
 
 const emptyGame = {
   solution: '',
@@ -67,8 +67,8 @@ class EditGameView extends Component {
   render() {
     return (
       <div>
-        <Header header="Customize The Game"/>
-        <Nav />
+        <Header header="EDIT GAME"/>
+        <Navbar currentView="EDIT GAME" />
         <form onSubmit={ this.handleSubmit }>
 
           {/* SOUTION  */}
