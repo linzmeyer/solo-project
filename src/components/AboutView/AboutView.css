@@ -1,25 +1,9 @@
-.card {
-  background-color: #ddd;
-  margin: 20px;
-}
-
-.grid {
+.tech-list, .thanks-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
-    'grid-title grid-title grid-title'
-    '. grid-list grid-list';
+  grid-area: list;
+  justify-content: center;
 }
 
-.grid-title {
-  grid-area: grid-title;
-}
-
-.grid-list {
-  grid-area: grid-list;
-}
-
-.grid-list > li {
-  grid-area: tech;
+.tech-list, .thanks-list > li {
   text-align: left;
 }
