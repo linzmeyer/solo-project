@@ -42,7 +42,6 @@ router.post('/logout', (req, res) => {
 
 // Delete a specific user from the database based on their id
 router.delete('/delete/:id', (req, res) => {
-  
   const queryText = 'DELETE FROM "user" WHERE id=$1';
   pool.query(queryText, [req.params.id])
   .then(() => { res.sendStatus(200); })
