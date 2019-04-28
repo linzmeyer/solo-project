@@ -102,6 +102,6 @@ router.put('/', async (req, res) => {
   } finally {
     client.release()
   }
-});
+}); // END TRANSACTION
 
 module.exports = router;

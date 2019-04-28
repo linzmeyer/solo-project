@@ -5,6 +5,7 @@ import userSaga from './userSaga';
 import getAllCluesSaga from './getAllCluesSaga';
 import updateGame from './updateGameSaga';
 import getActiveContentSaga from './getActiveContentSaga';
+import getAllUsersSaga from './getAllUsersSaga';
 
 // some sagas trigger other sagas, as an example
 // the registration triggers a login
@@ -13,6 +14,7 @@ export default function* rootSaga() {
   yield all([
     getActiveContentSaga(),
     getAllCluesSaga(),
+    getAllUsersSaga(),
     loginSaga(),
     registrationSaga(),
     updateGame(),

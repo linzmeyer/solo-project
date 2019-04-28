@@ -1,0 +1,17 @@
+.UserListItem-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.btn-delete {
+  height: 80%;
+  width: 30%;
+  justify-self: center;
+  align-self: center;
+  background-color: darkred;
+  color: white;
+  border-width: 3px;
+  border-radius: 50%;
+  border-color: #008183;
+  font-size: .9rem;
+}

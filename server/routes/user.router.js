@@ -40,4 +40,16 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
+// Delete a specific user from the database based on their id
+router.delete('/delete/:id', (req, res) => {
+  
+  const queryText = 'DELETE FROM "user" WHERE id=$1';
+  pool.query(queryText, [req.params.id])
+  .then(() => { res.sendStatus(200); })
+  .catch((err) => {
+    console.log('Error deleting user', err);
+    res.sendStatus(500);
+  });
+}); // END DELETE
+
 module.exports = router;

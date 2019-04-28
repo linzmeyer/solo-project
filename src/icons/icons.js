@@ -27,7 +27,7 @@ import {
 
 import { faEarlybirds } from '@fortawesome/free-brands-svg-icons';
 
-import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faEdit, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 
 // add individual icons to library
 icons.add(
@@ -49,6 +49,7 @@ icons.add(
   faMicrochip,
   faPeopleCarry,
   faStroopwafel,
+  faTrashAlt,
   faTrophy,
   faUsers,
 );

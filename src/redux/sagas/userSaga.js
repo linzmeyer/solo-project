@@ -19,13 +19,24 @@ function* fetchUser() {
     // with an id and username set the client-side user object to let
     // the client-side code know the user is logged in
     yield put({ type: 'SET_USER', payload: response.data });
-  } catch (error) {
+  } catch ( error ) {
     console.log('User get request failed', error);
+  }
+}
+
+function* deleteUser( action ) {
+  try {
+    // action.payload = user.id
+    yield axios.delete( `api/user/delete/${ action.payload }` )
+    yield put( { type: 'GET_ALL_USERS' });
+  } catch ( error ) {
+    console.log( 'Problem with userSaga DELETE_USER', error );
   }
 }
 
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
+  yield takeLatest('DELETE_USER', deleteUser);
 }
 
 export default userSaga;
