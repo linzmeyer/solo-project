@@ -7,6 +7,10 @@ import './UserListItem.css';
 class UserListItem extends Component {
 
   deleteUserListItem = () => {
+    // Confirm Admin's choice to delete a user's account
+    let answer = window.confirm(`Are you sure you want to delete ${ this.props.user.username }'s account?`);
+    if ( answer === false ) { return; }
+    // Dispatch action to delete user
     let action = { type: 'DELETE_USER', payload: this.props.user.id };
     this.props.dispatch( action );
   }
