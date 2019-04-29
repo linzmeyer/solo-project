@@ -97,7 +97,7 @@ router.put('/', async (req, res) => {
     res.sendStatus(200);
   } catch (e) {
     await client.query('ROLLBACK')
-    console.log(`Error making database query ${sqlSolution1Text}`, error);
+    console.log(`Error making database query ${ sqlSolution1Text }`, error);
     res.sendStatus(500);
   } finally {
     client.release()
