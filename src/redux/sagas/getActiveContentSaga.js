@@ -23,7 +23,7 @@ function* getAllActiveContent( action ) {
   try {
     // expecting to get an item from db
     const getResponse = yield axios.get( '/api/active-content' );
-    console.log( 'getAllActiveContent response:', getResponse );
+    console.log( 'getAllActiveContent response:', getResponse.data );
     action = { type: 'SET_ALL_ACTIVE_CONTENT', payload: getResponse.data };
     // dispatch action to allActiveContent reducer to update its value
     yield put( action );

@@ -4,11 +4,10 @@ const router = express.Router();
 
 // GET all active content from the database
 router.get('/', (req, res) => {
-  const queryText = `SELECT "reward" FROM "solutions";`;
+  const queryText = `SELECT * FROM "solutions" WHERE "active" = 'TRUE';`;
   pool.query(queryText)
     .then((result) => {
-      console.log(result.rows);
-      res.send(result.rows);
+      res.send(result.rows[0]);
     })
     .catch((err) => {
       console.log('Error completing SELECT all clues query', err);

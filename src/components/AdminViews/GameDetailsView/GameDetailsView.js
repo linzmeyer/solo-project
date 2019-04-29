@@ -27,14 +27,14 @@ class GameDetailsView extends Component {
   }
 
   render() {
-    console.log((this.props.allClues));
+    console.log((this.props));
     return (
       <div>
         <Header header="GAME DETAILS" />
         <Navbar currentView="GAME DETAILS" />
         <div>
           <h3>What people will discover:</h3>
-          {/* <p>final solution reducer</p> */}
+          <p>{ this.props.allActiveContent.solution }</p>
         </div>
         <div>
           {this.renderClueList()}
@@ -49,6 +49,6 @@ class GameDetailsView extends Component {
   }
 }
 
-const mapStateToProps = ({ allClues, solution }) => ({ allClues, solution });
+const mapStateToProps = ({ allClues, allActiveContent }) => ({ allClues, allActiveContent });
 
 export default connect( mapStateToProps )( GameDetailsView );
