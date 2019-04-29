@@ -14,6 +14,7 @@ const cluesRouter = require('./routes/clues.router');
 const adminChangesRouter = require('./routes/admin-changes.router');
 const activeContentRouter = require('./routes/active-content.router');
 const allUsersRouter = require('./routes/all-users.router');
+const userClueScoreRouter = require('./routes/user-clue-score.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -32,6 +33,7 @@ app.use('/api/clues', cluesRouter);
 app.use('/api/admin-changes', adminChangesRouter);
 app.use('/api/active-content', activeContentRouter);
 app.use('/api/all-users', allUsersRouter);
+app.use('/api/user-clue-score', userClueScoreRouter);
 
 // Serve static files
 app.use(express.static('build'));

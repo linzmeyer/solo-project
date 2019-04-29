@@ -1,3 +1,10 @@
+// A SHORT DISCALAIMER ABOUT THIS FILE
+// I wrote this component to conditionally render each link based on a few things:
+// - if the user is admin
+// - the current view
+// What I should have done is conditionally rendererd THE ENTIRE navbar component
+// based on just the current view. That would've been much cleaner.
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -25,7 +32,8 @@ class Navbar extends Component {
       (
         this.props.currentView === 'ADMIN HOME' ||
         this.props.currentView === 'GAME DETAILS' ||
-        this.props.currentView === 'TRAIL MAP'
+        this.props.currentView === 'TRAIL MAP' ||
+        this.props.currentView === 'ABOUT'
       )    
     ){ return <Link to="/admin/edit-game" className="nav-item" ><FontAwesomeIcon icon={["far", "edit"]} /> Edit Game</Link>; }
   }
@@ -36,7 +44,8 @@ class Navbar extends Component {
       (
         this.props.currentView === 'ADMIN HOME' ||
         this.props.currentView === 'EDIT GAME' ||
-        this.props.currentView === 'TRAIL MAP'
+        this.props.currentView === 'TRAIL MAP' ||
+        this.props.currentView === 'ABOUT'
       )
     ){ return <Link to="/admin/game-details" className="nav-item" ><FontAwesomeIcon icon="scroll" /> Game Details</Link>; }
   }
@@ -67,9 +76,13 @@ class Navbar extends Component {
         this.props.currentView === 'CLUE 5'
       )
     ){ return <Link to="/home" className="nav-item" ><FontAwesomeIcon icon="home" /></Link>; }
-    else if (
-      this.props.currentView === 'EDIT GAME' ||
-      this.props.currentView === 'GAME DETAILS'
+    else if ( ( this.props.user.is_admin ) &&
+      (
+        this.props.currentView === 'EDIT GAME' ||
+        this.props.currentView === 'GAME DETAILS' ||
+        this.props.currentView === 'TRAIL MAP' ||
+        this.props.currentView === 'ABOUT'
+      )
     ) { return <Link to="/admin/home" className="nav-item" ><FontAwesomeIcon icon="home" /></Link>; }
   }
 

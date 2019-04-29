@@ -34,9 +34,20 @@ function* deleteUser( action ) {
   }
 }
 
+function* updateUserClueScore( action ) {
+  try {
+    console.log('hit updateUserClueScore. Payload:', action.payload );
+    // action.payload is a number to update user.clue_score
+    yield axios.put( `api/user/user-clue-score`, action.payload );
+  } catch ( error ) {
+    console.log( 'Problem with userSaga UPDATE_USER_CLUE_SCORE', error );
+  }
+}
+
 function* userSaga() {
-  yield takeLatest('FETCH_USER', fetchUser);
-  yield takeLatest('DELETE_USER', deleteUser);
+  yield takeLatest( 'FETCH_USER', fetchUser );
+  yield takeLatest( 'DELETE_USER', deleteUser );
+  yield takeLatest( 'UPDATE_USER_CLUE_SCORE', updateUserClueScore );
 }
 
 export default userSaga;

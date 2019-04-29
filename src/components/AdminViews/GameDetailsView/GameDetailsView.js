@@ -37,11 +37,11 @@ class GameDetailsView extends Component {
           <p>{ this.props.allActiveContent.solution }</p>
         </div>
         <div>
-          {this.renderClueList()}
+          { this.renderClueList() }
         </div>
         <div>
           <h3>Reward:</h3>
-          {/* reward reducer */}
+          <p>{ this.props.allActiveContent.reward }</p>
         </div>
 
       </div>

@@ -14,20 +14,25 @@ class Clue1View extends Component {
   componentDidMount = () => {
     let action = { type: 'GET_ALL_CLUES' };
     this.props.dispatch( action );
+
   }
 
-  handleChange = propertyName => {
+  handleChange = () => {
     return (event) => {
-      console.log(event.target.value);
-      this.setState({
-        newUserGuess: {
-          ...this.state.newUserGuess,
-          [propertyName]: event.target.value,
-        }
-      });
+      this.setState({ newUserGuess: event.target.value });
     }
   }
 
+  submitGuess = () => {
+    console.log( 'submitting answer:', this.state.newUserGuess );
+    console.log( 'comparing with answer:', this.props.allClues[0].answer );
+    if ( this.state.newUserGuess === this.props.allClues[0].answer ) {
+      console.log('correct!');
+      let action = { type: 'UPDATE_USER_CLUE_SCORE', payload: 2 }
+      this.props.dispatch( action );
+    }
+    this.setState({ newUserGuess: '' });
+  }
 
   render() {
     return (
@@ -37,18 +42,24 @@ class Clue1View extends Component {
         <div className="clue-body" >
           <p className="paragraph">{this.props.allClues[0].description}</p>
           <CluesWidget />
-          <input
-            className='in'
-            placeholder="Answer here"
-            onChange={ this.handleChange( 'newUserGuess') }
-          ></input>
-          <button className='btn' >Submit</button>
+          <form>
+            <input
+              className='in'
+              placeholder="Answer here"
+              value={ this.state.newUserGuess }
+              onChange={ this.handleChange( 'newUserGuess') }
+            ></input>
+            <button
+              type="submit"
+              onClick={ this.submitGuess }
+            >Submit</button>
+          </form>
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ allClues }) => ({ allClues });
+const mapStateToProps = ({ allClues, user }) => ({ allClues, user });
 
 export default connect( mapStateToProps )(Clue1View);
