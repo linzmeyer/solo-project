@@ -37,10 +37,24 @@ function* deleteUser( action ) {
 function* updateUserClueScore( action ) {
   try {
     console.log('hit updateUserClueScore. Payload:', action.payload );
-    // action.payload is a number to update user.clue_score
-    yield axios.put( `api/user/user-clue-score`, action.payload );
+    // action.payload is an object with the user id and new score value
+    yield axios.put( `/api/user-clue-score`, action.payload );
+    action = { type: 'GET_USER_CLUE_SCORE' }
+    yield put( action );
   } catch ( error ) {
     console.log( 'Problem with userSaga UPDATE_USER_CLUE_SCORE', error );
+  }
+}
+
+function* getUserClueScore( action ) {
+  try {
+    console.log( 'hit getUserClueScore.' );
+    // action.payload is an object with the user id
+    const getResponse = yield axios.get( `/api/user-clue-score` );
+    action = {type: 'SET_USER_CLUE_SCORE', payload: getResponse.data.clue_score};
+    yield put( action );
+  } catch ( error ) {
+    console.log( 'Problem with userSaga GET_USER_CLUE_SCORE', error );
   }
 }
 
@@ -48,6 +62,7 @@ function* userSaga() {
   yield takeLatest( 'FETCH_USER', fetchUser );
   yield takeLatest( 'DELETE_USER', deleteUser );
   yield takeLatest( 'UPDATE_USER_CLUE_SCORE', updateUserClueScore );
+  yield takeLatest( 'GET_USER_CLUE_SCORE', getUserClueScore );
 }
 
 export default userSaga;

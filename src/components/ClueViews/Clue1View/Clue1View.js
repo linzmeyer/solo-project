@@ -14,7 +14,8 @@ class Clue1View extends Component {
   componentDidMount = () => {
     let action = { type: 'GET_ALL_CLUES' };
     this.props.dispatch( action );
-
+    action = { type: 'GET_USER_CLUE_SCORE' }
+    this.props.dispatch( action );
   }
 
   handleChange = () => {
@@ -26,11 +27,14 @@ class Clue1View extends Component {
   submitGuess = () => {
     console.log( 'submitting answer:', this.state.newUserGuess );
     console.log( 'comparing with answer:', this.props.allClues[0].answer );
-    if ( this.state.newUserGuess === this.props.allClues[0].answer ) {
+    // if ( this.state.newUserGuess === this.props.allClues[0].answer ) {
       console.log('correct!');
-      let action = { type: 'UPDATE_USER_CLUE_SCORE', payload: 2 }
+      let action = {
+        type: 'UPDATE_USER_CLUE_SCORE',
+        payload: { userId: this.props.user.id, newScore: 2 }
+      }
       this.props.dispatch( action );
-    }
+    // }
     this.setState({ newUserGuess: '' });
   }
 
@@ -41,7 +45,7 @@ class Clue1View extends Component {
         <Navbar currentView="CLUE 1" />
         <div className="clue-body" >
           <p className="paragraph">{this.props.allClues[0].description}</p>
-          <CluesWidget />
+          <CluesWidget userScore={ this.props.userClueScore } />
           <form>
             <input
               className='in'
@@ -60,6 +64,6 @@ class Clue1View extends Component {
   }
 }
 
-const mapStateToProps = ({ allClues, user }) => ({ allClues, user });
+const mapStateToProps = ({ allClues, user, userClueScore }) => ({ allClues, user, userClueScore });
 
 export default connect( mapStateToProps )(Clue1View);

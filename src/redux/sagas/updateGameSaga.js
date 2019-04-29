@@ -6,8 +6,6 @@ function* updateGame(action) {
   try {
     console.log('hit updateGameSaga:', action.payload );
     yield axios.put('/api/admin-changes', action.payload);
-
-    
   } catch (error) {
       console.log('Error with updateGameSaga:', error);
       alert(`Error updating game. Check console.`);
