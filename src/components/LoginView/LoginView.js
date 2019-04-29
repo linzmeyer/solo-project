@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
+import Navbar from '../Navbar/Navbar';
 
 class LoginView extends Component {
   state = {
@@ -9,10 +9,10 @@ class LoginView extends Component {
     password: '',
   };
 
-  login = (event) => {
+  login = ( event ) => {
     event.preventDefault();
 
-    if (this.state.username && this.state.password) {
+    if ( this.state.username && this.state.password ) {
       this.props.dispatch({
         type: 'LOGIN',
         payload: {
@@ -25,7 +25,7 @@ class LoginView extends Component {
     }
   } // end login
 
-  handleInputChangeFor = propertyName => (event) => {
+  handleInputChangeFor = propertyName => ( event ) => {
     this.setState({
       [propertyName]: event.target.value,
     });
@@ -35,24 +35,24 @@ class LoginView extends Component {
     return (
       <div>
         <Header header="LOGIN" />
-        <Nav />
+        <Navbar currentView="LOGIN" />
         {this.props.errors.loginMessage && (
           <h2
             className="alert"
             role="alert"
           >
-            {this.props.errors.loginMessage}
+            { this.props.errors.loginMessage }
           </h2>
         )}
-        <form onSubmit={this.login}>
+        <form onSubmit={ this.login }>
           <h1>Login</h1>
           <div>
             <label htmlFor="username">Username:</label>
             <input
               type="text"
               name="username"
-              value={this.state.username}
-              onChange={this.handleInputChangeFor('username')}
+              value={ this.state.username }
+              onChange={this.handleInputChangeFor( 'username' )}
             />
           </div>
           <div>
@@ -60,8 +60,8 @@ class LoginView extends Component {
             <input
               type="password"
               name="password"
-              value={this.state.password}
-              onChange={this.handleInputChangeFor('password')}
+              value={ this.state.password }
+              onChange={ this.handleInputChangeFor( 'password' ) }
             />
           </div>
           <div>
@@ -73,13 +73,6 @@ class LoginView extends Component {
             />
           </div>
         </form>
-        <div>
-          <button
-            type="button"
-            className="link-button"
-            onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}
-          >Register</button>
-        </div>
       </div>
     );
   }

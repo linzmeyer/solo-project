@@ -2,7 +2,7 @@ CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL,
-    "admin" BOOLEAN NOT NULL DEFAULT FALSE,
+    "is_admin" BOOLEAN NOT NULL DEFAULT FALSE,
     "solved_solution" BOOLEAN NOT NULL DEFAULT FALSE,
     "solutions_id" INT REFERENCES "solutions"
 );

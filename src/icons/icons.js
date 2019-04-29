@@ -20,12 +20,15 @@ import {
   faMapSigns,
   faMicrochip,
   faPeopleCarry,
+  faScroll,
+  faSignOutAlt,
   faStroopwafel,
   faTrophy,
+  faUserPlus,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { faEarlybirds } from '@fortawesome/free-brands-svg-icons';
+import { faEarlybirds, faPagelines } from '@fortawesome/free-brands-svg-icons';
 
 import { faEdit, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 
@@ -47,9 +50,13 @@ icons.add(
   faInfoCircle,
   faMapSigns,
   faMicrochip,
+  faPagelines,
   faPeopleCarry,
+  faScroll,
+  faSignOutAlt,
   faStroopwafel,
   faTrashAlt,
   faTrophy,
+  faUserPlus,
   faUsers,
 );

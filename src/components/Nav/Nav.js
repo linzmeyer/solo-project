@@ -39,4 +39,4 @@ const Nav = (props) => (
 // if you wanted you could write this code like this:
 const mapStateToProps = ({ user }) => ({ user });
 
-export default connect(mapStateToProps)(Nav);
+export default connect( mapStateToProps )( Nav );

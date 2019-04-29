@@ -10,7 +10,6 @@ class TrailMapView extends Component {
         <div className="img-window" >
           <img src="./trail-map.png" alt="trail map of Oakdale Nature Preserve" ></img>
         </div>
-        <Navbar currentView="TRAIL MAP" />
       </div>
     );
   }

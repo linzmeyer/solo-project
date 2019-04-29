@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from '../../Header/Header';
+import Navbar from '../../Navbar/Navbar';
 
 
 class AdminHomeView extends Component {
@@ -9,6 +10,7 @@ class AdminHomeView extends Component {
     return (
       <div>
         <Header header="ADMIN HOME" />
+        <Navbar currentView="ADMIN HOME" />
         <h1 id="welcome">
           Welcome, { this.props.user.username }!
         </h1>

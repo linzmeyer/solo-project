@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import Header from '../Header/Header';
+import Navbar from '../Navbar/Navbar';
 
 class RegisterView extends Component {
   state = {
@@ -32,16 +34,9 @@ class RegisterView extends Component {
   render() {
     return (
       <div>
-        {this.props.errors.registrationMessage && (
-          <h2
-            className="alert"
-            role="alert"
-          >
-            {this.props.errors.registrationMessage}
-          </h2>
-        )}
         <form onSubmit={this.registerUser}>
-          <h1>Register User</h1>
+          <Header header="REGISTER" />
+          <Navbar currentView="REGISTER" />
           <div>
             <label htmlFor="username">
               Username:
@@ -65,23 +60,27 @@ class RegisterView extends Component {
             </label>
           </div>
           <div>
-            <input
+            <button
+              className="register"
+              type="submit"
+              value="Register"
+            >Register</button>
+            {/* <input
               className="register"
               type="submit"
               name="submit"
               value="Register"
-            />
+            /> */}
           </div>
         </form>
-        <center>
-          <button
-            type="button"
-            className="link-button"
-            onClick={() => {this.props.dispatch({type: 'SET_TO_LOGIN_MODE'})}}
+        {this.props.errors.registrationMessage && (
+          <h2
+            className="alert"
+            role="alert"
           >
-            Login
-          </button>
-        </center>
+            {this.props.errors.registrationMessage}
+          </h2>
+        )}
       </div>
     );
   }
