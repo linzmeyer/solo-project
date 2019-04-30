@@ -12,27 +12,9 @@ class HomeView extends Component {
       <div>
         <Header header="HOME" />
         <Navbar currentView="HOME" />
-        <h1 id="welcome">
-          Welcome, { this.props.user.username }!
-        </h1>
-        <p>Your ID is: {this.props.user.id}</p>
-        <p>Your login mode is: {this.props.loginMode}</p>
-        <img src="./bridge.jpg" alt="Bridge in nature preserve" />
-        <div>
-          <Link to='/clues/1'><button>Play</button></Link>
-        </div>
-        <div>
-          <Link to='/trail-map'><button>Trail Map</button></Link>
-        </div>
-        <div>
-          <Link to='/about'><button>About</button></Link>
-        </div>
-        <div>
-          <Link
-            to="/"
-            onClick={() => this.props.dispatch({ type: 'LOGOUT' })}
-          >Sign Out</Link>
-        </div>
+        <h1 id="welcome">Welcome, { this.props.user.username }!</h1>
+        <p>Use the links above to get started!</p>
+        
       </div>
     );
   }

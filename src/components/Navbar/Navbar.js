@@ -8,46 +8,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Navbar.css';
 
 class Navbar extends Component {
 
-  // This could be a tracker in the nav bar to show the player's current score / unlocked hints
-  // componentDidMount = () => {
-  //   let action = { type: 'GET_PLAYER_STATS' };
-  //   this.props.dispatch( action );
-  // }
+  componentDidMount = () => {
+    // This could be a tracker in the nav bar to show the player's current score / unlocked hints
+    // action = { type: 'GET_PLAYER_STATS' };
+    // this.props.dispatch( action );
+  }
+
+  // if the user is admin, render link to admin home on user home view
+  renderAdminHomeLink = () => {
+    if ( this.props.user.is_admin && this.props.currentView === 'HOME' ) 
+    { return <Link to="/admin/home" className="nav-item" ><FontAwesomeIcon icon="home" /> Go To Admin</Link>; }
+  }
 
   // render About Link if the current view is not 'ABOUT'
   renderAboutLink = () => {
     if(
       this.props.currentView !== 'ABOUT'
     ){ return <Link to="/about" className="nav-item" ><FontAwesomeIcon icon={["fab", "earlybirds"]} /> About</Link>; }
-  }
-
-  // render Admin Edit Game link if user is admin and current view is the following
-  renderEditGameLink = () => {
-    if(( this.props.user.is_admin ) &&
-      (
-        this.props.currentView === 'ADMIN HOME' ||
-        this.props.currentView === 'GAME DETAILS' ||
-        this.props.currentView === 'TRAIL MAP' ||
-        this.props.currentView === 'ABOUT'
-      )    
-    ){ return <Link to="/admin/edit-game" className="nav-item" ><FontAwesomeIcon icon={["far", "edit"]} /> Edit Game</Link>; }
-  }
-
-  // render Admin Game Details if user is admin and current view is the following
-  renderGameDetailsLink = () => {
-    if(( this.props.user.is_admin ) &&
-      (
-        this.props.currentView === 'ADMIN HOME' ||
-        this.props.currentView === 'EDIT GAME' ||
-        this.props.currentView === 'TRAIL MAP' ||
-        this.props.currentView === 'ABOUT'
-      )
-    ){ return <Link to="/admin/game-details" className="nav-item" ><FontAwesomeIcon icon="scroll" /> Game Details</Link>; }
   }
 
   // render Game Link
@@ -82,6 +64,7 @@ class Navbar extends Component {
         this.props.currentView === 'EDIT GAME' ||
         this.props.currentView === 'GAME DETAILS' ||
         this.props.currentView === 'TRAIL MAP' ||
+        this.props.currentView === 'MANAGE USERS' ||
         this.props.currentView === 'ABOUT'
       )
     ) { return <Link to="/admin/home" className="nav-item" ><FontAwesomeIcon icon="home" /></Link>; }
@@ -140,8 +123,7 @@ class Navbar extends Component {
         { this.renderRegisterLink() }
         { this.renderLogInLink() }
         { this.renderHomeLink() }
-        { this.renderGameDetailsLink() }
-        { this.renderEditGameLink() }
+        { this.renderAdminHomeLink() }
         { this.renderGameLink() }
         { this.renderTrailMap() }
         { this.renderAboutLink() }

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from '../../Header/Header';
 import { connect } from 'react-redux';
 import Navbar from '../../Navbar/Navbar';
+// module that stores a game setup.
+import savedGames from '../../../modules/savedGames';
 
 const emptyGame = {
   solution: '',
@@ -27,6 +29,15 @@ class EditGameView extends Component {
 
   state = {
     newGame: emptyGame
+  };
+
+  // quickly init form
+  autoFillForm = () => {
+    this.setState({
+      newGame: {
+        ...this.state.newGame, ...savedGames.game1
+      }
+    });
   }
 
   handleClearAll = () => {
@@ -57,7 +68,6 @@ class EditGameView extends Component {
 		// if ( isValidInput === false ) {
 		// 	return;
     // }
-    // dispact action for PUT saga
     this.props.dispatch({ type: 'UPDATE_GAME', payload: this.state.newGame })
     // Reset the state to clear inputs
     this.setState({ newGame: emptyGame });
@@ -73,7 +83,9 @@ class EditGameView extends Component {
 
           {/* SOUTION  */}
           <div>
-            <h3>What will the player discover?</h3>
+            <h3 onClick={ this.autoFillForm }>
+              What will the player discover?
+            </h3>
             <textarea
               id='in-1'
               rows="2" cols="30"
