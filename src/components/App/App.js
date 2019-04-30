@@ -25,6 +25,8 @@ import Clue5View from '../ClueViews/Clue5View/Clue5View';
 import TrailMapView from '../TrailMapView/TrailMapView';
 
 import './App.css';
+import FinalClueView from '../ClueViews/FinalClueView/FinalClueView';
+import LettersView from '../ClueViews/LettersView/LettersView';
 
 class App extends Component {
   
@@ -70,6 +72,8 @@ class App extends Component {
               <ProtectedRoute exact path="/clues/3" component={Clue3View} />
               <ProtectedRoute exact path="/clues/4" component={Clue4View} />
               <ProtectedRoute exact path="/clues/5" component={Clue5View} />
+              <ProtectedRoute exact path="/clues/final" component={FinalClueView} />
+              <ProtectedRoute exact path="/clues/letters" component={LettersView} />
 
               {/* Shared Routes */}
               <Route exact path="/trail-map" component={TrailMapView} />

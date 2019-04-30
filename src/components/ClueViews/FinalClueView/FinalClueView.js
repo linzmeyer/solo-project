@@ -60,8 +60,8 @@ class Clue5View extends Component {
   render() {
     return (
       <div>
-        <Header header="CLUE 5" />
-        <Navbar currentView="CLUE 5" />
+        <Header header="HOO! LAST CLUE!" />
+        <Navbar currentView="LAST CLUE" />
         <div className="clue-body" >
           <p className="paragraph" >{ this.props.allClues[4].description }</p>
           <CluesWidget userScore={ this.props.userClueScore } />

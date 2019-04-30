@@ -5,41 +5,46 @@ import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import './CluesWidget.css';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // This is used in components in user client routes as a way for the user to
-// navigate to different clues.
+// navigate to different clues. The widget renders based on the user's clue score
 class CluesWidget extends Component {
   
   renderClues = () => {
-    let result = [];
-
+    let clueList = [];
     if ( this.props.userScore >= 1 ) {
-      result.push( <Link key="1" to="/clues/1">Clue1</Link> );
+      clueList.push( <Link key="1" to="/clues/1">Clue1</Link> );
     }
     if ( this.props.userScore >= 2 ) {
-      result.push( <Link key="2" to="/clues/2">Clue2</Link> );
+      clueList.push( <Link key="2" to="/clues/2">Clue2</Link> );
     }
     if ( this.props.userScore >= 3 ) {
-      result.push( <Link key="3" to="/clues/3">Clue3</Link> );
+      clueList.push( <Link key="3" to="/clues/3">Clue3</Link> );
     }
     if ( this.props.userScore >= 4 ) {
-      result.push( <Link key="4" to="/clues/4">Clue4</Link> );
+      clueList.push( <Link key="4" to="/clues/4">Clue4</Link> );
     }
     if ( this.props.userScore >= 5 ) {
-      result.push( <Link key="5" to="/clues/5">Clue5</Link> );
+      clueList.push( <Link key="5" to="/clues/5">Clue5</Link> );
     }
-    console.log('result:', result)
-    return result;
+    if ( this.props.userScore >= 6 ) {
+      clueList.push( <Link key="6" to="/clues/final">Final Clue</Link> );
+    }
+    return clueList;
   }
 
   render() {
-    
     return (
-      <div id="cluesWidget" className="CluesWidget-wrapper" >
-        {this.renderClues()}
+      <div className="CluesWidget-wrapper" >
+        <Link to="/clues/letters" ><FontAwesomeIcon icon="feather" /></Link>
+        { this.renderClues() }
       </div>
     );
   }
 }
 
-export default CluesWidget;
+const mapStateToProps = ({ userClueScore }) => ({ userClueScore });
+
+export default connect( mapStateToProps )( CluesWidget );

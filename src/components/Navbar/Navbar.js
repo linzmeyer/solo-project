@@ -73,7 +73,8 @@ class Navbar extends Component {
         this.props.currentView === 'CLUE 2' ||
         this.props.currentView === 'CLUE 3' ||
         this.props.currentView === 'CLUE 4' ||
-        this.props.currentView === 'CLUE 5'
+        this.props.currentView === 'CLUE 5' ||
+        this.props.currentView === 'LAST'
       )
     ){ return <Link to="/home" className="nav-item" ><FontAwesomeIcon icon="home" /></Link>; }
     else if ( ( this.props.user.is_admin ) &&
