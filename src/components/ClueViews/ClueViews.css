@@ -2,6 +2,10 @@
   grid-area: paragraph;
 }
 
+.answer-field {
+  grid-area: answer;
+}
+
 .in {
   grid-area: in;
 }
@@ -15,8 +19,28 @@
   display: grid;
   grid-row-gap: 1em;
   grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   grid-template-areas:
-  'paragraph paragraph  paragraph paragraph paragraph widget'
-  '. . in in . .'
-  '. . btn btn . .';
+  'paragraph paragraph paragraph paragraph paragraph widget'
+  'paragraph paragraph paragraph paragraph paragraph widget'
+  'paragraph paragraph paragraph paragraph paragraph widget'
+  'answer answer answer answer answer widget'
+  'answer answer answer answer answer widget'
+  'answer answer answer answer answer widget'
+  'answer answer answer answer answer widget'
+}
+
+.letters {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.letter > div {
+  display: inline-block;
+}
+
+.letters-wrapper {
+  margin: 2rem;
+  padding: 2rem;
 }

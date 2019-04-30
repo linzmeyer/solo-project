@@ -65,8 +65,10 @@ class Clue5View extends Component {
         <div className="clue-body" >
           <p className="paragraph" >{ this.props.allClues[4].description }</p>
           <CluesWidget userScore={ this.props.userClueScore } />
+          <div className="answer-field" >
+            { this.renderAnswerField() }
+          </div>
         </div>
-        { this.renderAnswerField() }
       </div>
     );
   }
