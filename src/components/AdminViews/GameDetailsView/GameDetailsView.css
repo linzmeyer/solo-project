@@ -1,0 +1,11 @@
+.discover-grid {
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: repeat( 2, 1fr );
+}
+
+.clues-grid {
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: repeat( 2, 1fr );
+}
