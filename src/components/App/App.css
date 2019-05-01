@@ -24,11 +24,13 @@
   font-size: 1.6rem;
   margin: 0px;
   grid-template-areas:
-  '. . App App App App App . .'
+  '. App App App App App App App .'
 }
 
 body {
   background: url('../../images/wetland.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* .alert {
