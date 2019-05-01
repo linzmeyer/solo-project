@@ -3,7 +3,8 @@ import './Footer.css'
 
 const Footer = () => (
   <footer>
-    &copy; Prime Digital Academy
+    <hr></hr>
+    &copy; Oakdale Discovery Center
   </footer>
 );
 
