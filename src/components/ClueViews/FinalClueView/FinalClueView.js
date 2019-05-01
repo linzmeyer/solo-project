@@ -16,6 +16,8 @@ class Clue5View extends Component {
     this.props.dispatch( action );
     action = { type: 'GET_USER_CLUE_SCORE' }
     this.props.dispatch( action );
+    action = { type: 'GET_ALL_ACTIVE_CONTENT' }
+    this.props.dispatch( action );
   }
 
   handleChange = () => {
@@ -26,7 +28,7 @@ class Clue5View extends Component {
 
   renderAnswerField = () => {
     if ( this.props.userClueScore >= 6 ) {
-      return ( <h3>ANSWER: { this.props.allClues[4].answer }</h3> );
+      return ( <h3>ANSWER: { this.props.allActiveContent.solution }</h3> );
     } else {
       return (
         <form>
@@ -47,7 +49,6 @@ class Clue5View extends Component {
 
   submitGuess = () => {
     if ( this.state.newUserGuess === this.props.allClues[4].answer ) {
-      console.log('correct!');
       let action = {
         type: 'UPDATE_USER_CLUE_SCORE',
         payload: { userId: this.props.user.id, newScore: 6 }
@@ -58,12 +59,13 @@ class Clue5View extends Component {
   }
 
   render() {
+    console.log('props:', this.props);
     return (
       <div>
         <Header header="HOO! LAST CLUE!" />
         <Navbar currentView="LAST CLUE" />
         <div className="clue-body" >
-          <p className="paragraph" >{ this.props.allClues[4].description }</p>
+          <p className="paragraph" >{ this.props.allActiveContent.clue }</p>
           <CluesWidget userScore={ this.props.userClueScore } />
           <div className="answer-field" >
             { this.renderAnswerField() }
@@ -74,6 +76,16 @@ class Clue5View extends Component {
   }
 }
 
-const mapStateToProps = ({ allClues, user, userClueScore }) => ({ allClues, user, userClueScore });
+const mapStateToProps = ({ 
+  allClues,
+  user,
+  userClueScore,
+  allActiveContent
+}) => ({
+  allClues,
+  user,
+  userClueScore,
+  allActiveContent
+});
 
 export default connect( mapStateToProps )( Clue5View );
