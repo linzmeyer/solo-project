@@ -10,6 +10,7 @@ router.put('/', async (req, res) => {
 
   // values for solutions table
   let solution = req.body.solution;
+  let finalClueHint = req.body.finalClueHint;
   let reward = req.body.reward;
   let active = 'TRUE';
 
@@ -46,7 +47,7 @@ router.put('/', async (req, res) => {
     // text to be inserted into solutions table for solution_number 1
     let sqlSolution1Text = `
       UPDATE "solutions"
-      SET ("solution", "reward", "active") = ($1, $2, $3)
+      SET ("solution", "clue", "reward", "active") = ($1, $2, $3, $4)
       WHERE "solution_number" = '1';
     `;
 
@@ -81,7 +82,7 @@ router.put('/', async (req, res) => {
     `;
 
     // update solution, reward, and active status in solutions table
-    await client.query( sqlSolution1Text, [ solution, reward, active ] );
+    await client.query( sqlSolution1Text, [ solution, finalClueHint, reward, active ] );
     // update clue 1 row in clues table
     await client.query( sqlClue1Text, [ clue1Description, clue1Answer, clue1Location ]);
     // update clue 2 row in clues table
