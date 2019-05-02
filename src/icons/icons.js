@@ -31,7 +31,7 @@ import {
 
 import { faEarlybirds, faPagelines } from '@fortawesome/free-brands-svg-icons';
 
-import { faEdit, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
+import { faEdit, faTrashAlt, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 
 // add individual icons to library
 icons.add(
@@ -47,6 +47,7 @@ icons.add(
   faFeather,
   faEarlybirds,
   faEdit,
+  faEyeSlash,
   faGlobe,
   faHome,
   faInfoCircle,

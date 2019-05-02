@@ -23,10 +23,12 @@ import Clue3View from '../ClueViews/Clue3View/Clue3View';
 import Clue4View from '../ClueViews/Clue4View/Clue4View';
 import Clue5View from '../ClueViews/Clue5View/Clue5View';
 import TrailMapView from '../TrailMapView/TrailMapView';
+import pathNotFound from '../../modules/pathNotFound.js';
 
 import './App.css';
 import FinalClueView from '../ClueViews/FinalClueView/FinalClueView';
 import LettersView from '../ClueViews/LettersView/LettersView';
+import ProtectedRouteAdmin from '../ProtectedRouteAdmin/ProtectedRouteAdmin';
 
 class App extends Component {
   
@@ -61,10 +63,10 @@ class App extends Component {
               {/*** Routes that I added ****************************************/}
 
               {/* Admin Routes */}
-              <ProtectedRoute exact path="/admin/home" component={AdminHomeView} />
-              <ProtectedRoute exact path="/admin/edit-game" component={EditGameView} />
-              <ProtectedRoute exact path="/admin/game-details" component={GameDetailsView} />
-              <ProtectedRoute exact path="/admin/manage-users" component={ManageUsersView} />
+              <ProtectedRouteAdmin exact path="/admin/home" component={AdminHomeView} />
+              <ProtectedRouteAdmin exact path="/admin/edit-game" component={EditGameView} />
+              <ProtectedRouteAdmin exact path="/admin/game-details" component={GameDetailsView} />
+              <ProtectedRouteAdmin exact path="/admin/manage-users" component={ManageUsersView} />
               
               {/* User Routes */}
               <ProtectedRoute exact path="/clues/1" component={Clue1View} />
@@ -79,7 +81,8 @@ class App extends Component {
               <Route exact path="/trail-map" component={TrailMapView} />
 
               {/* If none of the other routes matched, we will show a 404. */}
-              <Route render={() => <h1>404</h1>} />
+              <Route render={() => <div>{ pathNotFound() }</div>} />
+              
               
             </Switch>
             <Footer />
