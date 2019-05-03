@@ -1,5 +1,10 @@
-.admin-home-links > div {
-  margin: 1rem;
+
+
+button {
   font-size: 2rem;
-  padding: 1rem;
+  border-radius: 15px;
+  padding: 2%;
+  max-width: 100%;
+  min-width: 30%;
+  margin: 10px;
 }

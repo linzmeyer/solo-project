@@ -16,24 +16,20 @@ class AdminHomeView extends Component {
         <h1 id="welcome">Welcome, { this.props.user.username }!</h1>
         <div className="admin-home-links" >
           <div>
-            <Link to="/admin/edit-game" className="nav-item" >
-              <FontAwesomeIcon icon={["far", "edit"]} />
-              {' '}Edit Discovery Game{' '}
-              <FontAwesomeIcon icon={["far", "edit"]} />
+            <Link to="/admin/edit-game" >
+              <button>Edit Discovery Game</button>
             </Link>
           </div>
+
           <div>
             <Link to="/admin/game-details" className="nav-item" >
-              <FontAwesomeIcon icon="scroll" />
-              {' '}Current Game Details{' '}
-              <FontAwesomeIcon icon="scroll" />
+              <button>Current Game Details</button>
             </Link>
           </div>
+
           <div>
             <Link to="/admin/manage-users" className="nav-item" >
-              <FontAwesomeIcon icon="users" />
-              {' '}Manage Users{' '}
-              <FontAwesomeIcon icon="users" />
+              <button>Manage Users</button>
             </Link>
           </div>
         </div>
