@@ -29,6 +29,7 @@ import './App.css';
 import FinalClueView from '../ClueViews/FinalClueView/FinalClueView';
 import LettersView from '../ClueViews/LettersView/LettersView';
 import ProtectedRouteAdmin from '../ProtectedRouteAdmin/ProtectedRouteAdmin';
+import CongratsView from '../ClueViews/CongratsView/CongratsView';
 
 class App extends Component {
   
@@ -75,6 +76,7 @@ class App extends Component {
               <ProtectedRoute exact path="/clues/4" component={Clue4View} />
               <ProtectedRoute exact path="/clues/5" component={Clue5View} />
               <ProtectedRoute exact path="/clues/final" component={FinalClueView} />
+              <ProtectedRoute exact path="/clues/congrats" component={CongratsView} />
               <ProtectedRoute exact path="/clues/letters" component={LettersView} />
 
               {/* Shared Routes */}
