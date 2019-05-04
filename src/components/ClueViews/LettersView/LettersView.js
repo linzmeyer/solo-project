@@ -55,6 +55,7 @@ class LettersView extends Component {
         lettersToDisplay.push( <div key={i} >{solution[i]}</div> )
       }
     }
+
     // return the letters to display based on user's score
     return lettersToDisplay;
   }
@@ -71,7 +72,7 @@ class LettersView extends Component {
           </div>
         </div>
         <div className="clue-body" >
-          <p className="paragraph">Unscramble the letters to discover the solution to the final clue.</p>
+          <p className="paragraph">Unscramble the characters to discover the solution to the final clue.</p>
           <CluesWidget userScore={ this.props.userClueScore } />
         </div>
       </div>
