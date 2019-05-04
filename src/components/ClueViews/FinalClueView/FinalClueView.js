@@ -3,9 +3,11 @@ import Header from '../../Header/Header';
 import Navbar from '../../Navbar/Navbar';
 import CluesWidget from '../../CluesWidget/CluesWidget';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import LettersWidget from '../../LettersWidget/LettersWidget';
 import '../ClueViews.css';
 
-class Clue5View extends Component {
+class FinalClueView extends Component {
 
   state = {
     newUserGuess: ''
@@ -27,7 +29,7 @@ class Clue5View extends Component {
   }
 
   renderAnswerField = () => {
-    if ( this.props.userClueScore >= 6 ) {
+    if ( this.props.userClueScore >= 7 ) {
       return ( <h3>ANSWER: { this.props.allActiveContent.solution }</h3> );
     } else {
       return (
@@ -51,7 +53,7 @@ class Clue5View extends Component {
     if ( this.state.newUserGuess === this.props.allClues[4].answer ) {
       let action = {
         type: 'UPDATE_USER_CLUE_SCORE',
-        payload: { userId: this.props.user.id, newScore: 6 }
+        payload: { userId: this.props.user.id, newScore: 7 }
       }
       this.props.dispatch( action );
     }
@@ -69,6 +71,7 @@ class Clue5View extends Component {
           <CluesWidget userScore={ this.props.userClueScore } />
           <div className="answer-field" >
             { this.renderAnswerField() }
+            <LettersWidget />
           </div>
         </div>
       </div>
@@ -88,4 +91,4 @@ const mapStateToProps = ({
   allActiveContent
 });
 
-export default connect( mapStateToProps )( Clue5View );
+export default connect( mapStateToProps )(withRouter( FinalClueView ));

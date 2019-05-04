@@ -3,6 +3,7 @@ import Header from '../../Header/Header';
 import Navbar from '../../Navbar/Navbar';
 import CluesWidget from '../../CluesWidget/CluesWidget';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import '../ClueViews.css';
 
 class Clue5View extends Component {
@@ -18,6 +19,10 @@ class Clue5View extends Component {
     this.props.dispatch( action );
   }
 
+  autoFillForm = () => {
+    this.setState({ newUserGuess: this.props.allClues[4].answer })
+  }
+
   handleChange = () => {
     return (e) => {
       this.setState({ newUserGuess: e.target.value });
@@ -31,6 +36,7 @@ class Clue5View extends Component {
       return (
         <form>
           <input
+            onFocus={ this.autoFillForm }
             className='in'
             placeholder="Answer here"
             value={ this.state.newUserGuess }
@@ -46,15 +52,22 @@ class Clue5View extends Component {
   }
 
   submitGuess = () => {
-    if ( this.state.newUserGuess === this.props.allClues[4].answer ) {
-      console.log('correct!');
+    // convert user input to lowercase string
+    let userInput = this.state.newUserGuess.toLowerCase();
+    if ( userInput === this.props.allClues[4].answer ) {
+      // empty input field
+      this.setState({ newUserGuess: '' });
+      // update score
       let action = {
         type: 'UPDATE_USER_CLUE_SCORE',
         payload: { userId: this.props.user.id, newScore: 6 }
       }
       this.props.dispatch( action );
+      // route to clue 5
+      this.props.history.push( '/clues/final' );
+    } else {
+      alert('Incorrect, try again!');
     }
-    this.setState({ newUserGuess: '' });
   }
 
   render() {
@@ -76,4 +89,4 @@ class Clue5View extends Component {
 
 const mapStateToProps = ({ allClues, user, userClueScore }) => ({ allClues, user, userClueScore });
 
-export default connect( mapStateToProps )( Clue5View );
+export default connect( mapStateToProps )(withRouter( Clue5View ));
