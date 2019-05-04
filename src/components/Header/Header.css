@@ -1,6 +1,33 @@
 .Header-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   font-family: 'Fugaz One', cursive;
   text-transform: lowercase;
-  font-size: 4em;
-  margin: .5%;
+  margin: 0;
+  stroke-width: 10px;
+  ;
+  grid-template-areas:
+  'main-icon view .'
+  'main-icon title .';
 }
+
+.header-icon {
+  margin: 0;
+  stroke: #96E072;
+  display: grid;
+  justify-self: right;
+  font-size: 8rem;
+  grid-area: main-icon;
+}
+
+.title-header {
+  margin: 0;
+  grid-area: title;
+  text-decoration: underline;
+}
+
+.view-header {
+  margin: 0;
+  grid-area: view;
+}
+
