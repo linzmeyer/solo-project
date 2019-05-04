@@ -269,12 +269,12 @@ class EditGameView extends Component {
           </div>
         </form>
 
-        <button onClick={ this.handleSubmit } >Submit</button>
-        <button onClick={ this.handleClearAll } >Clear All</button>
-        <button onClick={ this.handleSaveGame } >Save Game</button>
+        <button onClick={ this.handleSubmit } className="btn-edit-game" >Submit</button>
+        <button onClick={ this.handleClearAll } className="btn-edit-game" >Clear All</button>
+        <button onClick={ this.handleSaveGame } className="btn-edit-game" >Save Game</button>
 
         <h2>Saved Games</h2>
-        <button onClick={ this.autoFillForm } >Game 1</button>
+        <button onClick={ this.autoFillForm } className="btn-edit-game" >Game 1</button>
 
       </div>
     );
