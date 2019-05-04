@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
+import './LoginView.css';
 
 class LoginView extends Component {
   state = {
@@ -64,14 +65,13 @@ class LoginView extends Component {
               onChange={ this.handleInputChangeFor( 'password' ) }
             />
           </div>
-          <div>
-            <input
-              className="log-in"
-              type="submit"
-              name="submit"
-              value="Log In"
-            />
-          </div>
+          <button
+            type="submit"
+            name="submit"
+            value="Log In"
+          >
+            Log In
+          </button>
         </form>
       </div>
     );

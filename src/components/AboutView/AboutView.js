@@ -42,14 +42,14 @@ class AboutView extends Component {
             <FontAwesomeIcon icon="microchip" /> Tech Used To Create This App <FontAwesomeIcon icon="microchip" />
           </h2>
           <ul className="tech-list" >
-            <li>React / JSX</li>
+            <li>React / JSX <FontAwesomeIcon icon={['fab', 'react']} spin /></li>
             <li>React-Redux</li>
             <li>Redux-Saga</li>
             <li>Node | npm</li>
             <li>AJAX</li>
-            <li>Postgresql</li>
-            <li>CSS | CSS Grids</li>
-            <li>Font Awesome</li>
+            <li><FontAwesomeIcon icon="database" /> Postgresql</li>
+            <li><FontAwesomeIcon icon="th" /> CSS Grids</li>
+            <li><FontAwesomeIcon icon={['fab', 'fort-awesome']} /> Font Awesome</li>
           </ul>
         </div>
         <div>
@@ -60,6 +60,7 @@ class AboutView extends Component {
             <li>Family: Laura and Monty</li>
             <li>Cohorts: Atbash, Affine, Baconia, Zaurak</li>
             <li>Prime Staff: I appreciate this awesome opportunity!</li>
+            <li>And I am thankful for you!</li>
           </ul>
         </div>
       </div>

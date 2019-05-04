@@ -13,11 +13,6 @@ class AdminHomeView extends Component {
         <Navbar currentView="ADMIN HOME" />
         <h1 id="welcome">Welcome, { this.props.user.username }!</h1>
         <div className="admin-home-links" >
-          <div>
-            <Link to="/admin/edit-game" >
-              <button className="btn-home" >Edit Discovery Game</button>
-            </Link>
-          </div>
 
           <div>
             <Link to="/admin/game-details" className="nav-item" >
@@ -26,10 +21,18 @@ class AdminHomeView extends Component {
           </div>
 
           <div>
+            <Link to="/admin/edit-game" >
+              <button className="btn-home" >Edit Discovery Game</button>
+            </Link>
+          </div>
+
+          
+          <div>
             <Link to="/admin/manage-users" className="nav-item" >
               <button className="btn-home">Manage Users</button>
             </Link>
           </div>
+          
         </div>
       </div>
     );

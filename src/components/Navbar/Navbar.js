@@ -22,14 +22,22 @@ class Navbar extends Component {
   // if the user is admin, render link to admin home on user home view
   renderAdminHomeLink = () => {
     if ( this.props.user.is_admin && this.props.currentView === 'HOME' ) 
-    { return <Link to="/admin/home" className="nav-item" ><FontAwesomeIcon icon="home" /> Go To Admin</Link>; }
+    { return(
+      <Link to="/admin/home" className="nav-item" >
+        <button className="nav-btn" >Admin</button>
+      </Link>
+      );}
   }
 
   // render About Link if the current view is not 'ABOUT'
   renderAboutLink = () => {
     if(
       this.props.currentView !== 'ABOUT'
-    ){ return <Link to="/about" className="nav-item" ><FontAwesomeIcon icon={["fab", "earlybirds"]} /> About</Link>; }
+    ){ return(
+      <Link to="/about" className="nav-item" >
+        <button className="nav-btn" >About</button>
+      </Link>
+    );}
   }
 
   // render Game Link
@@ -42,7 +50,11 @@ class Navbar extends Component {
         this.props.currentView === 'TRAIL MAP' ||
         this.props.currentView === 'ABOUT'
       )
-    ) { return <Link className="nav-item" to="/clues/1" ><FontAwesomeIcon icon={["fab", "pagelines"]} /> Game</Link>; }
+    ) { return (
+      <Link className="nav-item" to="/clues/1" >
+        <button className="nav-btn" ><FontAwesomeIcon icon={["fab", "pagelines"]} className="icon" />Game</button>
+      </Link>
+    );}
   }
     
   // render Home link based on current view and if the user is admin
@@ -58,7 +70,11 @@ class Navbar extends Component {
         this.props.currentView === 'CLUE 5' ||
         this.props.currentView === 'LAST'
       )
-    ){ return <Link to="/home" className="nav-item" ><FontAwesomeIcon icon="home" /></Link>; }
+    ){ return (
+      <Link to="/home" className="nav-item" >
+        <FontAwesomeIcon icon="home" className="home-icon" />
+      </Link>
+    );}
     else if ( ( this.props.user.is_admin ) &&
       (
         this.props.currentView === 'EDIT GAME' ||
@@ -67,7 +83,11 @@ class Navbar extends Component {
         this.props.currentView === 'MANAGE USERS' ||
         this.props.currentView === 'ABOUT'
       )
-    ) { return <Link to="/admin/home" className="nav-item" ><FontAwesomeIcon icon="home" /></Link>; }
+    ) { return(
+      <Link to="/admin/home" className="nav-item" >
+        <FontAwesomeIcon icon="home" className="home-icon" />
+      </Link>
+    );}
   }
 
   // render Log In link based on if the user is logged in
@@ -78,7 +98,9 @@ class Navbar extends Component {
           className="nav-item sign-out"
           to="/"
           onClick={() => this.props.dispatch({ type: 'SET_TO_LOGIN_MODE' })}
-        ><FontAwesomeIcon icon="sign-out-alt" />Log In</Link>
+        >
+          <button className="nav-btn" >Log In</button>
+        </Link>
       );
     }
   }
@@ -91,7 +113,9 @@ class Navbar extends Component {
           className="nav-item"
           to="/"
           onClick={() => this.props.dispatch({ type: 'LOGOUT' })}
-        >Log Out <FontAwesomeIcon icon="sign-out-alt" /></Link>
+        >
+          <button className="nav-btn" >Log Out</button>
+        </Link>
       );
     }
   }
@@ -104,7 +128,12 @@ class Navbar extends Component {
           className="nav-item"
           to="/"
           onClick={() => this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' })}
-        ><FontAwesomeIcon icon="user-plus" /> Register</Link>
+        >
+          <button className="nav-btn" >
+            <FontAwesomeIcon icon="user-plus" className="icon" />
+            Register
+          </button>
+        </Link>
       );
     }
   }
@@ -113,7 +142,11 @@ class Navbar extends Component {
   renderTrailMap = () => {
     if(
       this.props.currentView !== 'TRAIL MAP'
-    ){ return <Link to="/trail-map" className="nav-item" ><FontAwesomeIcon icon="map-signs" /> Trail Map</Link>; }
+    ){ return (
+      <Link to="/trail-map" className="nav-item" >
+        <button className="nav-btn" >Map</button>
+      </Link>
+    );}
   }
     
   render() {

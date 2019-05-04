@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
   letters, // a string of letters of the active solution
   loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
   user, // will have an id and username if someone is logged in
-  userClueScore,
+  userClueScore, // contains the current score of the user
 });
 
 export default rootReducer;

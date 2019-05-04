@@ -23,10 +23,17 @@ class GameDetailsView extends Component {
             <ClueListItem key={ clue.clue_number } clue={ clue } />
           )
         }
-        <div>
-          <hr></hr>
+        <div className="ClueListItem-wrapper" >
           <h3>Final Clue:</h3>
-          <p>{ this.props.allActiveContent.clue }</p>
+          <p className="clue-description" >{ this.props.allActiveContent.clue }</p>
+          <div className="card-bottom" >
+            <hr></hr>
+            <h4>Answer:</h4>
+            <p>{ this.props.allActiveContent.solution }</p>
+            <br></br>
+            <h4>Reward:</h4>
+            <p>{ this.props.allActiveContent.reward }</p>
+          </div>
         </div>
       </div>
     );
@@ -38,16 +45,7 @@ class GameDetailsView extends Component {
       <div>
         <Header header="GAME DETAILS" />
         <Navbar currentView="GAME DETAILS" />
-        <div className="discover-grid" >
-          <div>
-            <h3>People will discover:</h3>
-            <p>{ this.props.allActiveContent.solution }</p>
-          </div>
-          <div>
-            <h3>Reward:</h3>
-            <p>{ this.props.allActiveContent.reward }</p>
-          </div>
-        </div>
+        
         <div>
           { this.renderClueList() }
         </div>

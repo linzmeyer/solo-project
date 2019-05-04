@@ -14,6 +14,7 @@ import {
   faCompass,
   faCopyright,
   faCircle,
+  faDatabase,
   faFeather,
   faGlobe,
   faHome,
@@ -24,12 +25,13 @@ import {
   faScroll,
   faSignOutAlt,
   faStroopwafel,
+  faTh,
   faTrophy,
   faUserPlus,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { faEarlybirds, faPagelines } from '@fortawesome/free-brands-svg-icons';
+import { faEarlybirds, faFortAwesome, faPagelines, faReact } from '@fortawesome/free-brands-svg-icons';
 
 import { faEdit, faTrashAlt, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 
@@ -44,7 +46,9 @@ icons.add(
   faCompass,
   faCopyright,
   faCircle,
+  faDatabase,
   faFeather,
+  faFortAwesome,
   faEarlybirds,
   faEdit,
   faEyeSlash,
@@ -55,9 +59,11 @@ icons.add(
   faMicrochip,
   faPagelines,
   faPeopleCarry,
+  faReact,
   faScroll,
   faSignOutAlt,
   faStroopwafel,
+  faTh,
   faTrashAlt,
   faTrophy,
   faUserPlus,

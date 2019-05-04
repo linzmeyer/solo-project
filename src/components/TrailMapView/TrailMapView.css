@@ -2,4 +2,5 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   overflow: scroll;
+  border-radius: 20px;
 }

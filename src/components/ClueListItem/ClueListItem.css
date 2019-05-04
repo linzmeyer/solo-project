@@ -1,0 +1,32 @@
+.ClueListItem-wrapper {
+  border-width: 10px;
+  border: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  /* box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2); */
+  padding: 20px;
+  color: #33334d;
+}
+.ClueListItem-wrapper:hover {
+  border-color: #96E072;
+  color: black;
+  box-shadow: 4px 4px 4px 2px black;
+}
+
+.clue-description {
+  text-align: start;
+}
+
+.card-bottom {
+  text-align: start;
+}
+.card-bottom > h4, p {
+  display: inline-block;
+  margin: 3px;
+}
+
+.clue-location {
+  display: inline-block;
+  margin: 3px;
+  text-align: start;
+}
