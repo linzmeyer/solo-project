@@ -1,42 +1,31 @@
 :root {
-    --primary: #ddd;
-    --dark: #333;
-    --light: #fff;
-    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-    --oakdaleGreen: #6D863F;
-    --oakdaleBlue: #47728B;
-  }
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --oakdaleGreen: #6D863F;
+  --oakdaleBlue: #47728B;
+}
 
 .App-wrapper {
-    background-color: var(--oakdaleGreen);
-    margin: 30px 50px;
-    border-radius: 20px;
-    text-align: center;
-    padding: 20px;
-    display: grid;
-    grid-area: App;
+  background-color: var(--oakdaleGreen);
+  margin: 30px 50px;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  display: grid;
+  grid-area: App;
 }
 
 .App-body {
   display: grid;
-  grid-template-columns: repeat( 9, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.6rem;
   margin: 0px;
   grid-template-areas:
   '. App App App App App App App .'
 }
-
-body {
-  background: url('../../images/wetland.jpeg');
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-/* .alert {
-    background-color: #ff4545;
-    margin: 50px;
-} */
 
 .log-in, .log-out, .register {
   background-color: #00acb0;
@@ -54,12 +43,29 @@ body {
 
 /* This line makes the "Register" and "Login" buttons look like links */
 .link-button {
-    background:none;
-    color:inherit;
-    border:none;
-    padding:0;
-    font: inherit;
-    outline:0;
-    border-bottom:1px solid #444; 
-    cursor: pointer;
+  background:none;
+  color:inherit;
+  border:none;
+  padding:0;
+  font: inherit;
+  outline:0;
+  border-bottom:1px solid #444; 
+  cursor: pointer;
+}
+
+body {
+  background: url('../../images/wetland.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: 4px 4px 4px 2px black;
+}
+
+hr {
+  border-color: #96E072;
 }
