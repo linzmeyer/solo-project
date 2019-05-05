@@ -46,7 +46,7 @@ class LettersWidget extends Component {
         lettersToDisplay.push( <div key={i} >{solution[i]}</div> )
       }
     } // if userScore is 1, push 100% of the letters into array
-    if ( this.props.userClueScore === 6 ) {
+    if ( this.props.userClueScore >= 6 ) {
       for ( let i = 0; i < stage5; i++ ) {
         lettersToDisplay.push( <div key={i} >{solution[i]}</div> )
       }
