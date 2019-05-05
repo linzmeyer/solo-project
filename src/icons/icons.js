@@ -18,11 +18,15 @@ import {
   faFeather,
   faGlobe,
   faHome,
+  faHourglassEnd,
+  faHourglassStart,
   faInfoCircle,
   faMapSigns,
   faMicrochip,
   faPeopleCarry,
+  faRetweet,
   faScroll,
+  faShippingFast,
   faSignOutAlt,
   faStroopwafel,
   faTh,
@@ -31,9 +35,21 @@ import {
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { faEarlybirds, faFortAwesome, faPagelines, faReact } from '@fortawesome/free-brands-svg-icons';
+// import brands icons from brands-svg dependency
+import {
+  faEarlybirds,
+  faFortAwesome,
+  faNode,
+  faPagelines,
+  faReact
+} from '@fortawesome/free-brands-svg-icons';
 
-import { faEdit, faTrashAlt, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
+// import regular icons from regular-svg dependency
+import {
+  faEdit,
+  faTrashAlt,
+  faEyeSlash
+} from '@fortawesome/free-regular-svg-icons';
 
 // add individual icons to library
 icons.add(
@@ -54,13 +70,18 @@ icons.add(
   faEyeSlash,
   faGlobe,
   faHome,
+  faHourglassEnd,
+  faHourglassStart,
   faInfoCircle,
   faMapSigns,
   faMicrochip,
+  faNode,
   faPagelines,
   faPeopleCarry,
   faReact,
+  faRetweet,
   faScroll,
+  faShippingFast,
   faSignOutAlt,
   faStroopwafel,
   faTh,
