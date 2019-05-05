@@ -17,13 +17,20 @@ class Clue5View extends Component {
     this.props.dispatch( action );
     action = { type: 'GET_USER_CLUE_SCORE' }
     this.props.dispatch( action );
+    action = { type: 'GET_ALL_ACTIVE_CONTENT' }
+    this.props.dispatch( action );
   }
 
 
   renderAnswerField = () => {
     if ( this.props.userClueScore >= 6 ) {
       return (
-        <h3>Congrats!</h3>
+        <div>
+          <h3>Congrats!</h3>
+          <p>You won!</p>
+          <p>Collect your reward at the discovery center!</p>
+          <p>Current reward for winning: {this.props.allActiveContent.reward }</p>
+        </div>
       );
     } else {
       return (
@@ -51,6 +58,6 @@ class Clue5View extends Component {
   }
 }
 
-const mapStateToProps = ({ allClues, user, userClueScore }) => ({ allClues, user, userClueScore });
+const mapStateToProps = ({ allClues, allActiveContent, user, userClueScore }) => ({ allClues, allActiveContent, user, userClueScore });
 
 export default connect( mapStateToProps )(withRouter( Clue5View ));
