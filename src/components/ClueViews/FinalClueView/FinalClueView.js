@@ -22,6 +22,10 @@ class FinalClueView extends Component {
     this.props.dispatch( action );
   }
 
+  autoFillForm = () => {
+    this.setState({ newUserGuess: this.props.allActiveContent.solution })
+  }
+
   handleChange = () => {
     return (e) => {
       this.setState({ newUserGuess: e.target.value });
@@ -35,12 +39,15 @@ class FinalClueView extends Component {
       return (
         <form>
           <input
+            onFocus={ this.autoFillForm }
             className='in'
             placeholder="Answer here"
             value={ this.state.newUserGuess }
             onChange={ this.handleChange( 'newUserGuess') }
           ></input>
+          <br></br>
           <button
+            className="btn-clue-submit"
             type="submit"
             onClick={ this.submitGuess }
           >Submit</button>
@@ -50,18 +57,25 @@ class FinalClueView extends Component {
   }
 
   submitGuess = () => {
-    if ( this.state.newUserGuess === this.props.allClues[4].answer ) {
+    // convert user input to lowercase string
+    let userInput = this.state.newUserGuess.toLowerCase();
+    if ( userInput === this.props.allActiveContent.solution ) {
+      // empty input field
+      this.setState({ newUserGuess: '' });
+      // update score
       let action = {
         type: 'UPDATE_USER_CLUE_SCORE',
         payload: { userId: this.props.user.id, newScore: 7 }
       }
       this.props.dispatch( action );
+      // route to clue 5
+      this.props.history.push( '/clues/congrats' );
+    } else {
+      alert('Incorrect, try again!');
     }
-    this.setState({ newUserGuess: '' });
   }
 
   render() {
-    console.log('props:', this.props);
     return (
       <div>
         <Header header="HOO! LAST CLUE!" />
