@@ -10,25 +10,6 @@
   grid-template-columns: repeat( 2, 1fr );
 }
 
-input {
-  background-color: lightgray;
-}
-
-textarea {
-  background-color: lightgray;
-  font-size: 1rem;
-  height: 7rem;
-  width: 50%;
-}
-
-textarea:focus, input:focus {
-  background-color: white;
-}
-
-textarea::placeholder {
-  text-align: center;
-}
-
 .btn-edit-game {
   width: 20%;
   background-color: #96E072;
