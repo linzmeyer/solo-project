@@ -53,6 +53,8 @@
   cursor: pointer;
 }
 
+/*** ELEMENT SELECTORS ********************************************************/
+
 body {
   background: url('../../images/wetland.jpeg');
   background-size: cover;
@@ -61,6 +63,7 @@ body {
 
 button {
   cursor: pointer;
+  outline: none;
 }
 button:hover {
   box-shadow: 4px 4px 4px 2px black;
@@ -68,4 +71,25 @@ button:hover {
 
 hr {
   border-color: #96E072;
+}
+
+input {
+  background-color: lightgray;
+  border-color: #134611;
+  border-width: 3px;
+  outline: none;
+}
+
+textarea {
+  background-color: lightgray;
+  font-size: 1rem;
+  height: 7rem;
+  outline: none;
+  width: 50%;
+}
+textarea:focus, input:focus {
+  background-color: white;
+}
+textarea::placeholder {
+  text-align: center;
 }
