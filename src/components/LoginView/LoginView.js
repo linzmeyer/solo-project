@@ -66,6 +66,7 @@ class LoginView extends Component {
             />
           </div>
           <button
+            className="btn-login"
             type="submit"
             name="submit"
             value="Log In"
