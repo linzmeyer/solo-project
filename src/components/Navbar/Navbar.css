@@ -1,7 +1,8 @@
 .Navbar-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 0.3rem;
+  grid-column-gap: 2rem;
+  grid-row-gap: .3rem;
   background-color: #008183;
   padding: 10px 0 10px 0;
   border-radius: 20px;
@@ -34,8 +35,6 @@
   stroke: yellow;
   stroke-width: 10px;
   font-size: 200%;
-  display: grid;
-  justify-self: left;
   margin-left: 10px;
   border-radius: 15px;
 }
