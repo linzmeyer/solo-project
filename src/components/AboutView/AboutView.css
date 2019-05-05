@@ -1,9 +1,15 @@
-.tech-list, .thanks-list {
+.about-list {
   display: grid;
   grid-area: list;
   justify-content: center;
 }
-
-.tech-list, .thanks-list > li {
+.about-list > li {
   text-align: left;
+}
+
+.about-title {
+  stroke: #00e600;
+  stroke-width: 3%;
+  -webkit-text-stroke: 1px #00e600;
+  color: black;
 }
