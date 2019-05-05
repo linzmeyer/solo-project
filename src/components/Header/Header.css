@@ -19,6 +19,10 @@
   font-size: 8rem;
   grid-area: main-icon;
 }
+.header-icon:hover {
+  stroke: chartreuse;
+  cursor: pointer;
+}
 
 .title-header {
   margin: 0;
