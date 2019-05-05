@@ -42,7 +42,9 @@ class Clue3View extends Component {
             value={ this.state.newUserGuess }
             onChange={ this.handleChange( 'newUserGuess') }
           ></input>
+          <br></br>
           <button
+            className="btn-clue-submit"
             type="submit"
             onClick={ this.submitGuess }
           >Submit</button>
