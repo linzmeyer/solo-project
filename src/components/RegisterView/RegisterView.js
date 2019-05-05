@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
+import './RegisterView.css';
 
 class RegisterView extends Component {
   state = {
@@ -61,7 +62,7 @@ class RegisterView extends Component {
           </div>
           <div>
             <button
-              className="register"
+              className="btn-register"
               type="submit"
               value="Register"
             >Register</button>
