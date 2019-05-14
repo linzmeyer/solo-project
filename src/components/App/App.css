@@ -82,6 +82,8 @@ input {
 
 textarea {
   background-color: lightgray;
+  border-color: #134611;
+  border-width: 3px;
   font-size: 1rem;
   height: 7rem;
   outline: none;
