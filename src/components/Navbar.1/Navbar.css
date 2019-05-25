@@ -1,0 +1,54 @@
+.Navbar-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: .3rem;
+  background-color: #008183;
+  padding: 10px 0 10px 0;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+.nav-item {
+  text-decoration: none;
+  align-self: center;
+}
+
+.nav-btn {
+  width: 50%;
+  height: 300%;
+  background-color: #6D863F;
+  border-width: 1px;
+  border-color: #96E072;
+  border-radius: 15px;
+  color: #96E072;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+  font-size: 120%;
+}
+
+.home-icon {
+  color: #6D863F;
+  stroke: yellow;
+  stroke-width: 10px;
+  font-size: 200%;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+.home-icon:hover {
+  color: #3E8914;
+  stroke: black;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  margin: 3px;
+  color: #96E072;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 75%;
+}
+
