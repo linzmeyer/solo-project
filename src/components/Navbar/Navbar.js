@@ -13,12 +13,6 @@ import './Navbar.css';
 
 class Navbar extends Component {
 
-  componentDidMount = () => {
-    // This could be a tracker in the nav bar to show the player's current score / unlocked hints
-    // action = { type: 'GET_PLAYER_STATS' };
-    // this.props.dispatch( action );
-  }
-
   // if the user is admin, render link to admin home on user home view
   renderAdminHomeLink = () => {
     if ( this.props.user.is_admin && this.props.currentView === 'HOME' ) 
@@ -150,7 +144,6 @@ class Navbar extends Component {
   }
     
   render() {
-    console.log( 'this.props:', this.props );
     return (
       <div className="Navbar-wrapper" >
         { this.renderRegisterLink() }
