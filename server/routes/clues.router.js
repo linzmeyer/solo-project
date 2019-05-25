@@ -4,7 +4,7 @@ const router = express.Router();
 
 // GET all clues from the database
 router.get('/', (req, res) => {
-  const queryText = `SELECT "clue_number", "description", "answer", "location" FROM "clues";`;
+  const queryText = `SELECT "clue_number", "description", "answer", "location" FROM "clues" ORDER BY "clue_number";`;
   pool.query(queryText)
     .then((result) => { res.send(result.rows); })
     .catch((err) => {
