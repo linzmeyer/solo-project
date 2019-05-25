@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom'
 import {connect} from 'react-redux';
 import LoginView from '../LoginView/LoginView';
 import RegisterView from '../RegisterView/RegisterView';
+import HomeView from '../HomeView/HomeView';
 
 // A Custom Wrapper Component -- This will keep our code DRY.
 // Responsible for watching redux state, and returning an appropriate component
@@ -34,7 +35,7 @@ const ProtectedRouteAdmin = (props) => {
   } else if (loginMode === 'login') {
     // if they are not logged in, check the loginMode on Redux State
     // if the mode is 'login', show the LoginView
-    ComponentToShow = LoginView;
+    ComponentToShow = HomeView;
   } else {
     // the the user is not logged in and the mode is not 'login'
     // show the RegisterView
