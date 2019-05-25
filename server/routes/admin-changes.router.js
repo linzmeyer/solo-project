@@ -94,10 +94,10 @@ router.put('/', async (req, res) => {
     // update clue 5 row in clues table
     await client.query( sqlClue5Text, [ clue5Description, clue5Answer, clue5Location ]);
 
-    await client.query('COMMIT')
+    await client.query('COMMIT');
     res.sendStatus(200);
   } catch (e) {
-    await client.query('ROLLBACK')
+    await client.query('ROLLBACK');
     console.log(`Error making database query ${ sqlSolution1Text }`, error);
     res.sendStatus(500);
   } finally {

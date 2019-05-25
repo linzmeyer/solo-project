@@ -7,6 +7,7 @@ import { library as icons } from '@fortawesome/fontawesome-svg-core'
 import { 
   faAddressCard,
   faAnchor,
+  faBaby,
   faChartPie,
   faCheckSquare, 
   faCoffee,
@@ -55,6 +56,7 @@ import {
 icons.add(
   faAddressCard,
   faAnchor,
+  faBaby,
   faChartPie,
   faCheckSquare, 
   faCoffee,
