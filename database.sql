@@ -7,6 +7,16 @@ CREATE TABLE "user" (
     "solutions_id" INT REFERENCES "solutions"
 );
 
+CREATE TABLE "solutions" (
+    "id" SERIAL PRIMARY KEY,
+    "solution_number" INT NOT NULL,
+    "solution" VARCHAR (100) NOT NULL,
+    "clue" VARCHAR (1000),
+    "image_url" VARCHAR (1000),
+    "reward" VARCHAR (1000),
+    "active" BOOLEAN NOT NULL DEFAULT FALSE
+);
+
 CREATE TABLE "stats" (
     "id" SERIAL PRIMARY KEY,
     "solved" BOOLEAN NOT NULL DEFAULT FALSE,
@@ -14,16 +24,9 @@ CREATE TABLE "stats" (
     "user_id" INT REFERENCES "user"
 );
 
-CREATE TABLE "solutions" (
-    "id" SERIAL PRIMARY KEY,
-    "solution" VARCHAR (100) NOT NULL,
-    "image_url" VARCHAR (1000),
-    "reward" VARCHAR (1000),
-    "active" BOOLEAN
-);
-
 CREATE TABLE "clues" (
     "id" SERIAL PRIMARY KEY,
+    "clue_number" INT NOT NULL,
     "description" VARCHAR (1000),
     "answer" VARCHAR (100),
     "location" VARCHAR (1000)
@@ -46,8 +49,8 @@ INSERT INTO "clues" ("clue_number", "description", "answer", "location")
 VALUES ('5', 'description of clue 5', 'quaking aspen', 'under the lake');
 
 -- Init POST to solutions table
-INSERT INTO "solutions" ("solution", "reward")
-VALUES ('init solution', 'init reward');
+INSERT INTO "solutions" ("solution_number", "solution", "clue", "reward", "active")
+VALUES ('1', 'init solution', 'init solution clue', 'init reward', TRUE);
 
 -- Update the solution table with a new solution and reward
 UPDATE "solutions" SET "solution" = 'chase', "reward" = 'treats';
