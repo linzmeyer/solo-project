@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from '../../Header/Header';
 import Navbar from '../../Navbar/Navbar';
+// import Navbar2 from '../../Navbar.1/Navbar';
 import './AdminHomeView.css';
 
 class AdminHomeView extends Component {
@@ -11,6 +12,7 @@ class AdminHomeView extends Component {
       <div>
         <Header header="ADMIN HOME" />
         <Navbar currentView="ADMIN HOME" />
+        {/* <Navbar2 currentView="ADMIN HOME" /> */}
         <h1 id="welcome">Welcome, { this.props.user.username }!</h1>
         <div className="admin-home-links" >
 
