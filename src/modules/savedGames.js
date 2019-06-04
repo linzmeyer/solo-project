@@ -7,7 +7,7 @@ let savedGames = {
     clue3Hint: `Now, exit the Green Trail and head back onto the Discovery Center Loop Trail. Here, you will find one of six exercise stations located throughout the preserve. This one has a pull up bar and another piece of equipment. What part of your body does the other piece of equipment focus on? Hint: Head, ________, knees, and toes!`,
     clue4Hint: `Let's continue on the loop trail. After the loop starts turning right, we will pass a trail map station and there will be a bench coming up to our right. Let's inspect the quote of the bench. Read the quote for your next answer. What does the quote say we conserve? Hint: The sentence says, "We conserve what we _____."`,
     clue5Hint: `Great job! You have made it to the last clue. Let's take the connecting trails that leads to the Boardwalk Trail. On the connecting trail, keep your eyes on the lake side of the trail. There are a lot of really big Oak Trees. At the base of one of these trees the local community has put together a little home for someone here. Who lives here? Hint: There is a sign that says his name with a #OakdalePark in front of it.`,
-    finalClueHint: `extinct carnivorous felids that are classified either as subspecies of the lion`,
+    finalClueHint: `extinct carnivorous felions that are classified as subspecies of the lion`,
     clue1Answer: `eder`,
     clue2Answer: `great horned owl`,
     clue3Answer: `shoulders`,
